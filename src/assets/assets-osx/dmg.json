@@ -1,0 +1,10 @@
+{
+  "title": "iNgawi",
+  "icon": "icon.icns",
+  "background": "osx_installer.png",
+  "icon-size": 80,
+  "contents": [
+    { "x": 518, "y": 284, "type": "link", "path": "/Applications" },
+    { "x": 122, "y": 284, "type": "file", "path": "../../../build/iNgawi/osx64/iNgawi.app" }
+  ]
+}

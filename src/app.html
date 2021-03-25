@@ -1,0 +1,2692 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+
+    <!-- ===========================
+    SITE TITLE
+    =========================== -->
+    <title>iNgawi</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    
+    <!-- ===========================
+    FAVICONS
+    =========================== -->
+    <link rel="icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-ipad-retina.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-iphone.png" />
+     
+    <!-- ===========================
+    STYLESHEETS
+    =========================== -->    
+    <link rel="stylesheet" href="css/libs/bootstrap.css">
+    <link rel="stylesheet" href="css/libs/preloader.css">
+    <link rel="stylesheet" href="css/libs/style.css">
+    <link rel="stylesheet" href="css/libs/responsive.css">
+    <link rel="stylesheet" href="css/libs/animate.css">
+    <link rel="stylesheet" href="css/libs/contextMenu.css">
+
+    <link rel="stylesheet" href="css/libs/font-awesome.css">
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/icon.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/action.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/input.css">
+        
+    <!-- ===========================
+    ICONS: 
+    =========================== -->
+    <link rel="stylesheet" href="css/libs/simple-line-icons.css">    
+    
+    <!-- ===========================
+    GOOGLE FONTS
+    =========================== -->    
+    <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Antic|Raleway:300"> -->
+  
+   </head>
+    <body style="color:#888">
+        <!-- Preloader -->
+        <div id="preloader">           
+          <div id="status">
+            <div class="in_persembahan" style="height:110px"></div>
+            <div class="in_logo_perpusnas" style="height:355px" ></div> 
+          </div>
+        </div>
+        <div class="pre" style="display:none">           
+        </div>
+        
+        <script type="text/javascript">
+        </script>
+        <script type="text/x-handlebars" data-template-name="application">
+            {{outlet}}
+            {{outlet modal}}
+        </script>
+        <script type="text/x-handlebars" id="components/modal-dialog">
+            <div class="overlay">
+              {{yield}}
+            </div>
+        </script>
+        <script type="text/x-handlebars" id="index">
+            {{outlet}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="bookworm">
+          {{#modal-dialog}}
+            <div class="badge_level">
+              <div class="b-red white">
+                <center style="padding-top:7px;padding-bottom:5px;"><span class="modal-title" style="position:relative;top:-3px;">Status</span></center>
+                <span {{action "closeModal"}} class="moco-cross dark_red" style="cursor:pointer;font-size:12px;position: absolute;top: 10px;left:10px"></span>
+              </div>
+              <div style="padding-top:15px;">
+                <center>
+                  <div class="photoCircle"><img id="photo_badge" style="height:78px;width:78px;border-radius:50%;" onerror="AvaError(this)"></div>
+                  <div style="height:10px;width:3px;background-color:#4D4B8C"></div>
+                  <div style="height:35px;width:200px;background-color:#4D4B8C;border-radius:4px;">
+                    <div style="color:#fff;font-size:14px;padding-top:7px;"><i class="moco-check_o2" style="padding-right:10px;padding-top:5px"></i>You`re a <span class="medium" id="span_sos">Bookworm</span></div>
+                  </div>
+                  <div style="height:130px;width:265px;border-radius:2px;border:1px solid #ddd;margin-top:20px;font-size:12px">
+                    <div id="list_badge_s"></div>
+                  </div>
+                  <div style="height:15px;width:3px;background-color:#ddd"></div>
+                  <div id="div_sos" style="height:35px;width:200px;border-radius:4px;border:1px solid #888;padding-top:5px">
+                    <i class="moco-lock" id="icon_sos" style="font-size:14px;color:#bbb;padding-top:10px;"></i><span class="sidebar-text" style="color:#ddd;font-size:14px;padding-left:10px;padding-top:8px;" id="l_sos">Socializer</span>
+                  </div>
+                </center>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="newbie">
+          {{#modal-dialog}}
+            <div class="badge_level white" style="height:443px;">
+              <div class="b-red">
+                <center style="padding-top:7px;padding-bottom:5px;"><span class="modal-title" style="position:relative;top:-3px;">Status</span></center>
+                <span {{action "closeModal"}} class="moco-cross dark_red" style="cursor:pointer;font-size:12px;position: absolute;top: 10px;left:10px;"></span>
+              </div>
+              <div style="padding-top:15px;">
+                <center>
+                  <div class="photoCircle"><img id="photo_badge" style="height:78px;width:78px;border-radius:50%;" onerror="AvaError(this)"></div>
+                  <div style="height:10px;width:3px;background-color:#4D4B8C"></div>
+                  <div style="height:35px;width:200px;background-color:#4D4B8C;border-radius:4px;">
+                    <div style="color:#fff;font-size:14px;padding-top:7px;"><i class="moco-check_o2" style="padding-right:10px;padding-top:5px;"></i>You`re a <span class="medium">Newbie</span></div>
+                  </div>
+                  <div style="height:130px;width:265px;border-radius:2px;border:1px solid #ddd;margin-top:20px;font-size:12px">
+                    <div id="list_badge_s"></div>
+                  </div>
+                  <div style="height:15px;width:3px;background-color:#ddd"></div>
+                  <div style="height:35px;width:200px;border-radius:4px;border:1px solid #888;padding-top:5px">
+                    <i class="moco-lock" style="font-size:14px;color:#bbb;padding-top:10px;"></i><span class="sidebar-text" style="color:#ddd;font-size:14px;padding-left:10px;padding-top:8px;">Bookworm</span>
+                  </div>
+                  <div style="height:15px;width:3px;background-color:#ddd"></div>
+                  <div style="height:35px;width:200px;border-radius:4px;border:1px solid #888;padding-top:5px">
+                    <i class="moco-lock" style="font-size:14px;color:#bbb;padding-top:10px;"></i><span class="sidebar-text" style="color:#ddd;font-size:14px;padding-left:10px;padding-top:8px">Socializer</span>
+                  </div>
+                </center>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="log-email">
+            {{#modal-dialog}}
+              <div class="b-back log-email">
+                <div class="header b-red">
+                  <button  {{action 'closeModal'}}><i class="fa fa-angle-left fa-2x dark_red"></i></button>
+                  <span class="white head-title">Gunakan Akun email</span>
+                </div>
+                <form {{action "login_email" on="submit"}} style="margin-top:25px;padding:0px 18px;">
+                  <center style='width:260px;'>
+                    <input id="log_email" type="text" class="form-control" placeholder="email" style="height:32px;">
+                    <input id="log_pass" type="password" class="form-control" placeholder="password" style="height:32px;">
+                    <!-- <div class="input-group" style="margin:0px 10px;">
+                      <input type="text" class="form-control" placeholder="email" aria-describedby="email login" id="log_email">
+                    </div>
+                    <div class="input-group" style="margin:0px 10px;">
+                      <input type="password" class="form-control" placeholder="password" aria-describedby="password login" id="log_pass">
+                    </div> -->
+                  </center>
+                  <!--<div class="log-input">
+                    <input placeholder="email" id="log_email" class="thin" style="padding:8px 10px">
+                    <input placeholder="sandi" id="log_pass" type="password" class="thin" style="padding:8px 10px">
+                  </div>-->
+                  <div class="f10 log-forgot red" {{action 'openModal' 'log-forgot'}} style="float:right;padding-right:10px;">Lupa Sandi?</div><br>
+                  <div style="margin-top:25px;">
+                    <button class="small radius b-red2 white" type="submit" {{action "login_email"}} style="position:absolute;left:0;right:0;margin:auto;width:100px;border-radius:3px;padding-top:7px;padding-bottom:8px;">Masuk<i class="fa" id="log-load"></i></button>
+                  </div>
+                </form>
+              </div>
+            {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="log-forgot">
+            {{#modal-dialog}}
+              <div class="b-back log-email">
+                <div class="header b-red">
+                  <button  {{action 'openModal' 'log-email'}}><i class="fa fa-angle-left fa-2x dark_red"></i></button>
+                  <span class="white head-title">Lupa Kata Sandi</span>
+                </div>
+                <form {{action "login_forgot" on="submit"}} style="padding:0px 18px;">
+                  <div class="f12" style="line-height:1.2;margin-top:10px;text-align:center;padding:10px;color:#aaa">Sisipkan email anda untuk mengatur ulang kata sandi.</div>
+                  <div class="input-group" style="margin:0px 10px;width:245px;">
+                    <input type="text" class="form-control" placeholder="email" aria-describedby="email" id="log_forgot">
+                  </div>
+                  <!--<div class="log-forgot">
+                    <input placeholder="Email Address" id="log_forgot" class="thin" style="padding:8px 10px">
+                  </div>-->
+                  <center>
+                    <button class="small radius b-red2 white" type="submit" {{action "login_forgot"}} style="position:absolute;left:0;right:0;margin:auto;width:150px;border-radius:5px;padding-top:7px;padding-bottom:8px;margin-top:65px;">Kirim <i class="fa" id="log-load"></i></button>
+                  </center>
+                </form>
+              </div>
+            {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="no-user">
+          {{#modal-dialog}}
+            <div class="confirm b-back">
+              <div class="b-red" {{action 'closeModal'}}>
+                <div class="col-md-3 col-xs-3"><div class="midCircle"><i class="moco-ava"></i></div></div>
+                <div class="col-md-9 col-xs-9" style="line-height:1.2"><div class="regular f14" style="padding-top:5px;">Kamu belum punya</div><div class="regular f14">akun</div></div>
+              </div>
+              <div class="center black f12" style="line-height:1.4;padding-left:15px;padding-right:15px;margin-top:10px">
+                Maaf, kami tidak bisa menemukan akun dengan username tersebut. Apakah kamu ingin mendaftar?
+              </div>
+              <center>
+                <button class="small btn-list-red2" type="submit" style="margin-top:35px; padding-top:8px;padding-bottom:8px;" {{action "openModal" "register"}}>Daftar Sekarang! <i class="fa" id="log-load"></i></button>
+              </center>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="register">
+            {{#modal-dialog}}
+              <div class="b-back reg-email">
+                <div class="header b-red">
+                  <button  {{action 'openModal' 'log-email'}} id="reg_back"><i class="fa fa-angle-left fa-2x dark_red"></i></button>
+                  <span class="white head-title" id="reg_title">Gunakan Akun email</span>
+                </div>
+                <form {{action "login_email" on="submit"}} style="margin: 20px 45px;">
+                  <div class="input-group" style="margin:0px 10px;width:245px;">
+                    <input type="text" class="form-control" placeholder="Name" aria-describedby="email" id="reg_name">
+                  </div>
+                  <div class="input-group" style="margin:0px 10px;width:245px;">
+                    <input type="text" class="form-control" placeholder="Email" aria-describedby="email" id="reg_email">
+                  </div>
+                  <div class="input-group" style="margin:0px 10px;width:245px;">
+                    <input type="text" class="form-control" placeholder="Phone Number" aria-describedby="phone" id="reg_phone">
+                  </div>
+                  <div class="input-group" style="margin:0px 10px;width:245px;margin-top:20px;">
+                    <input type="password" class="form-control" placeholder="Password" aria-describedby="Password" id="reg_pass">
+                  </div>
+                  <div class="input-group" style="margin:0px 10px;width:245px;">
+                    <input type="password" class="form-control" placeholder="Repeat Password" aria-describedby="Repeat Password" id="reg_pass2">
+                  </div>
+                  <center>
+                    <div class="f10 black" style="padding-top:10px;">Kata sandi akan diperlukan untuk transaksi</div>
+                    <button class="small radius b-red2 white" type="submit" {{action "reg_email"}} style="position:absolute;left:0;right:0;margin:auto;width:100px;border-radius:5px;padding-top:7px;padding-bottom:8px;margin-top:30px;">Daftar<i class="fa" id="log-load"></i></button>
+                  </center>
+                </form>
+              </div>
+            {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="reg-twit">
+            {{#modal-dialog}}
+              <div class="b-back reg-twit" style="border-radius:0;">
+                <div class="header b-red">
+                  <div class="next white" style="top:8px;" {{action 'reg_twit'}}>Next <i class="fa" id="log-load"></i></div>
+                  <button  {{action 'closeModal'}} id="reg_back"><i class="fa fa-angle-left fa-2x dark_red"></i></button>
+                  <span class="white head-title" id="reg_title" style="margin-top:7px;">Gunakan Akun twitter</span>
+                </div>
+                <form {{action "reg_twit" on="submit"}}>
+                  <div class="log-input"  style="line-height:1.8">
+                    {{input placeholder="Nama" id="reg_name"}}
+                    {{input placeholder="Email" id="reg_email"}}
+                    {{input placeholder="Nomor Telepon" id="reg_phone"}}
+                  </div>
+                  <div class="log-input"  style="line-height:1.8">
+                    {{input placeholder="Sandi" id="reg_pass" type="password"}}
+                    {{input placeholder="Ulangi Sandi" id="reg_pass2" type="password"}}
+                  </div>
+                  <center>
+                    <div class="f12 black" style="padding-top:10px;">Sandi ini akan dibutuhkan saat melakukan transaksi</div>
+                  </center>
+                </form>
+              </div>
+            {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="tos">
+            {{#modal-dialog}}
+              <div class="b-back reg-email">
+                <div class="header b-red">
+                  <div class="white next" {{action 'register'}} style="top:6px;" id="act_tos">Next <i class="fa" id="log-load"></i></div>
+                  <button  {{action 'openModal' 'log-email'}} id="act_close"><i class="fa fa-angle-left fa-2x dark_red"></i></button>
+                  <span class="white head-title">Term Of Service</span>
+                </div>
+                <iframe src="term.htm"></iframe>
+              </div>
+            {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="success">
+          {{#modal-dialog}}
+            <div class="confirm b-back">
+              <div class="b-red" {{action 'closeModal'}}>
+                <div class="col-md-3 col-xs-3"><div class="moco-check_o2 white" style="font-size:40px;" id="icn_success"></div></div>
+                <div class="col-md-9 col-xs-9"><span class="regular f14" style="position:absolute;margin:5% auto">{{App.Success_Alert}}</span></div>
+              </div>
+              <div class="center black f12" style="line-height:1.4;padding-left:15px;padding-right:15px;">{{App.Success_Content}}
+              </div>
+              <center>
+                <button class="b_red2 red2 b-trans f12" {{action 'closeModal'}} id="act_try" style="position:absolute;left:0;right:0;margin:auto;width:125px;border-radius:5px;padding-top:7px;padding-bottom:8px;margin-top:30px;">Selesai</button>
+              </center>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="welcome">
+          {{#modal-dialog}}
+            <div class="confirm b-back">
+              <div class="b-red" {{action 'closeModal'}}>
+                <div class="col-md-3 col-xs-3"><div class="moco-love_o_ white" style="font-size:40px;"></div></div>
+                <div class="col-md-9 col-xs-9"><span class="regular f14" style="position:absolute;margin:5% auto">{{App.Success_Alert}}</span></div>
+              </div>
+              <div class="center black f12" style="line-height:1.4;padding-left:15px;padding-right:15px;">{{App.Success_Content}}
+              </div>
+              <center>
+                <button class="b_red2 red2 b-trans f12" {{action 'closeModal'}} id="act_try" style="position:absolute;left:0;right:0;margin:auto;width:125px;border-radius:5px;padding-top:7px;padding-bottom:8px;margin-top:30px;">Selesai</button>
+              </center>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="failed">
+          {{#modal-dialog}}
+            <div class="confirm b-back">
+              <div class="b-red" {{action 'closeModal'}}>
+                <div class="col-md-3 col-xs-3" id="icn_failed"><div class="midCircle"><i class="moco-lock"></i></div></div>
+                <div class="col-md-9 col-xs-9"><span class="regular f14" style="position:absolute;margin:5% auto">{{App.Failed_Alert}}</span></div>
+              </div>
+              <div class="center black f12" style="line-height:1.4;padding-left:15px;padding-right:15px;">{{App.Failed_Content}}
+              </div>
+              <center>
+                <button class="b_red2 red2 b-trans f12" {{action 'closeModal'}} id="act_try" style="position:absolute;left:0;right:0;margin:auto;width:125px;border-radius:5px;padding-top:7px;padding-bottom:8px;margin-top:30px;">Ulangi!</button>
+              </center>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="loading">
+            {{#modal-dialog}}
+              <div class="loading">
+                <center>
+                  <div class="fa-1x5" id="loading_text" style="padding-bottom:10px;">{{App.loading}}</div>
+                  <div class="fa-1x5" id="loading_text2"></div>
+                  <!--<div class="fa fa-spin fa-4x fa-refresh"></div>-->
+                  <!-- <div class="loadicon moco-ij_logo wow tada infinite fa-4x" data-wow-duration="8s" style="z-index:9999;margin-top:20px"></div> -->
+                   <!-- <div class="app_icon wow tada infinite" style="height:100px" ></div>  -->
+                </center>
+              </div>
+            {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="add_donasi">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="height: 500px;width: 400px;">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" {{action 'closeModal'}} id="close" style="position:absolute;top:6px;display:none;right: 10px;display: none"><i class="moco-cross fa-2x dark_red"></i></span>
+                <center><span class="modal-title white" id="modal_title">Donasi Buku</span></center>
+                <span {{action 'closeModal'}} style="cursor:pointer;position:absolute;right:10px;top:13px;" class="pointer dark_red moco-cross"></span>
+              </div>
+              <div>
+                <div class="col-md-12 col-lg-12 col-md-12" style="height: 115px;padding-top: 10px;">
+                  <div class="col-md-3 col-xs-3 col-lg-3" style="padding-left: 0px"><img src="" id="don_cover" onerror="CovError(this)" style="max-height: 100px"></div>
+                  <div class="col-md-9 col-xs-9 col-lg-9" style="padding-left: 0">
+                    <div class="f14" id="don_title"></div>
+                    <div class="f12" id="don_author"></div>
+                    <div class="f12"><span>Harga : </span><span id="don_price" class="red"></span></div>
+                    <div class="f12">
+                      <span>
+                        <button class="dark" id="spin_down" onclick="updateSpinner('don_qty',this)">-</button><input type="number" id="don_qty"  min="1" value="5" oninput="validity.valid||(value='');"><button class="dark" id="spin_up" onclick="updateSpinner('don_qty',this)" style="padding:0px 7px;">+</button>
+                      </span>
+                      <span> Copy</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="black f14 pl10" style="margin-bottom:5px;"><b>Total Biaya Donasi</b></div>
+                <div class="grey f12 pl10" style="display:none">Metode pembayaran dapat di sesuaikan*</div>
+                <div class="red f14" style="position: absolute;right: 10px;top: 154px;" id="don_total">Rp. 0,-</div>
+                <div class="divider"></div>
+              </div>
+              <div style="display:none">
+                <div class="red f14 pl10" pl10>Pilih ePustaka</div>
+                <span>
+                <select class="pl10" id="don_kategori">
+                    <option>Wilayah</option>
+                    <option>Utara</option>
+                    <option>Selatan</option>
+                  </select>
+                </span>
+                <span>
+                  <select id="don_wilayah" style="display: none">
+                    <option>Wilayah</option>
+                    <option>Utara</option>
+                    <option>Selatan</option>
+                  </select>
+                </span>
+              </div>
+              <div id="" class="search_user" style="margin-top:0px;padding:10px;padding-top:5px;background:#fdfdfd">
+                <div class="input-group" style="padding-bottom:0">
+                  <input type="text" style="-webkit-box-shadow: inset 0 1px 2px transparent;border: transparent;border-bottom: 1px solid #ddd;font-size: 12px;background: transparent;" class="form-control" id="don_pustaka_search" placeholder="Pilih Tujuan Donasi....">
+                  <span class="input-group-addon red" style="background: transparent;border: transparent;border-radius: 0;"><i id="icon-search" class="fa fa-search pointer red" onclick="don_search_pustaka('don_pustaka_search')" ></i></span>
+                </div>
+              </div>
+              <div class="divider" style="border-bottom:2px solid #ddd"></div>
+              <div class="" id="" style="height:276px;overflow:auto;padding-bottom:55px;;"> 
+                <div id="don_list_pustaka" data-index="1" style="background:#fafafa"></div>
+                <div><center><button id="btn-loadmore_don" class="loadmore" onclick="don_search_pustaka('don_pustaka_search',true)" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_feeds"></i></button></center></div>
+              </div>
+              <div class="b-red" style="position:relative;top:-55px;text-align:center;opacity:0.8">
+                <button class="b-trans white f12 b_white radius b_red2" id="don_action" style="padding:5px 50px;margin:13px;" onclick="">Selanjutnya</button>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="help_donasi">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="height: 500px;width: 400px;">
+              <div class="head1 b-trans" style="border-color:transparent">
+                <span class="pointer dark_red" {{action 'closeModal'}} id="close" style="position:absolute;top:6px;display:none;right: 10px;display: none"><i class="moco-cross fa-2x dark_red"></i></span>
+                <center style="display:none"><span class="modal-title red" id="modal_title">Donasikan Buku</span></center>
+                <span {{action 'openModal' 'checkout_donasi' 'open'}} style="cursor:pointer;position:absolute;right:10px;top:13px;" class="pointer dark_red moco-cross"></span>
+              </div>
+              <center id="don_tutor" style="height: 115px;padding: 20px;font-size:12px;">
+                <div>Petunjuk Pengiriman Tunai Virtual Akun di ATM</div>
+                <br>
+                <div>
+                  <div>1. Masukkan PIN Anda</div>
+                  <div>2. Pilih menu transfer</div>
+                  <div>3. Ke Rekening Virtual Akun</div>
+                  <div>4. Masukkan Nomor Virtual Akun</div>
+                  <div>5. Periksa nomor VA yang tertera pastikan tanggal dan nominasi pembayaran sesuai dengan yang terdapat pada device anda, jika benar bisa dilanjutkan</div>
+                </div>
+              </center>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="tujuan_bayar">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="height: 500px;width: 400px;">
+              <div class="head1 b-trans" style="border-color:transparent">
+                <span class="pointer dark_red" {{action 'closeModal'}} id="close" style="position:absolute;top:6px;display:none;right: 10px;display: none"><i class="moco-cross fa-2x dark_red"></i></span>
+                <center style="display:none"><span class="modal-title red" id="modal_title">Donasikan Buku</span></center>
+                <span {{action 'openModal' 'confirmation_donasi' 'open'}} style="cursor:pointer;position:absolute;right:10px;top:13px;" class="pointer dark_red moco-cross"></span>
+              </div>
+              <center id="don_tutor" style="height: 440px;padding: 20px;font-size:12px;overflow:auto;">
+              </center>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="confirmation_donasi">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="height: 500px;width: 400px;background:#fafafa">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" {{action 'closeModal'}} id="close" style="position:absolute;top:6px;display:none;right: 10px;display: none"><i class="fa fa-angle-left fa-2x dark_red"></i></span>
+                <center><span class="modal-title white" id="modal_title">Detail Konfirmasi</span></center>
+                <span {{action 'closeModal'}} style="cursor:pointer;position:absolute;right:10px;top:13px;" class="pointer dark_red moco-cross"></span>
+              </div>
+              <div class="col-xs-12 col-md-12" style="border:1px solid  #ddd; border-radius: 5px;padding: 5px;background:#fff;text-align:left;width:358px;margin:20px;margin-bottom:10px;margin-top:10px;">
+                <div class="col-xs-12 col-md-12 p0">
+                  <div class="f11 col-xs-6 col-md-6 p0" style="padding-bottom:5px;">
+                    <div class="black" ><b>Status Pembayaran</b></div>
+                  </div>
+                  <div class="f12 col-xs-6 col-md-6 p0" style="text-align: right">
+                    <div class="red" id="status_bayar">Dalam Verifikasi</div>
+                  </div>
+                  <center class="f11 col-xs-12 col-md-12" id="conf_ket_don" style="line-height: 1.2;padding: 15px;border-top:1px solid #ddd">
+                    <div>Proses verifikasi sedang berlangsung silakan tunggu...
+                    <br>Pastikan anda telah melakukan pembayaran</div>
+                    <div style="padding-top:10px;">Apabila dalam 1 x 24 jam belum terverifikasi
+                    <br>silakan kirimkan bukti pembayaran melalui kontak admin
+                    </div>
+                  </center>
+                </div>
+              </div>
+              <center class="p0" style="display:none"><button class="b-red2 white f12 b_white radius b_red2 p0" id="don_resettrx" style="padding:5px 50px;margin:0px;" onclick="don_reset_trx()">Reset Transaksi</button></center>
+              <div class="check_list" style="height:420px;padding-bottom:55px;margin-top: 40px;margin: 20px;"> 
+                <div class="col-xs-12 col-md-12 box_conf" style="border:1px solid  #ddd; border-radius: 5px;padding: 5px;background:#fff">
+                </div>
+                <button class="btn red2 b-trans btn-panduan" style="width:360px;text-align: left;margin-top: 10px;border:1px solid #ddd;background:#fff" {{action "openModal" "tujuan_bayar"}}>Panduan Rekening Tujuan Pembayaran</button>
+                <div id="don_list_book1" data-index="1" style="height: 165px;padding:0px 2px;padding-bottom: 60px;overflow: auto;"></div>
+                <div style="display: none"><center><button id="btn-loadmore" class="loadmore" onclick="" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_feeds"></i></button></center></div>
+              </div>
+            <div>
+              <div class="b-red" style="position:relative;top:-55px;text-align:center;opacity:0.8">
+                <input style="display:none;" id="fileDialog1" type="file" accept=".png,.img,.jpg,.gif,.bmp,.jpeg" />
+                <!-- <center {{action "change_photo"}} class="grey" style="padding-top:10px;cursor:pointer"><div id="photo_edit" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Upload or take a profile picture <br> by clicking on the  &lsquo; Edit Photo &rsquo;" data-html="true">Ganti Foto</div></center> -->
+                <button class="b-trans white f12 b_white radius b_red2" id="don_action1" style="padding:5px 50px;margin:13px;" onclick="upload_confirmation()">Kontak Admin</button>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="checkout_donasi">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="height: 500px;width: 400px;">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" {{action 'closeModal'}} id="close" style="position:absolute;top:6px;display:none;right: 10px;display: none"><i class="fa fa-angle-left fa-2x dark_red"></i></span>
+                <center><span class="modal-title white" id="modal_title">Kotak Pesanan Donasi</span></center>
+                <span {{action 'closeModal'}} style="cursor:pointer;position:absolute;left:10px;top:7px;" class="pointer dark_red fa fa-angle-left fa-2x"></span>
+              </div>
+              <div class="col-xs-12 col-md-12 col-lg-12" style="border-bottom: 1px solid #ddd;padding: 10px 0px;text-align: center;box-shadow: 1px 1px 2px #888888;">
+                <div class="col-xs-6 col-md-6 col-lg-6 f12 pointer _list p0 red" id="don_kotak" onclick="">Pembayaran</div>
+                <div class="col-xs-6 col-md-6 col-lg-6 f12 pointer _list p0" id="don_ring" onclick="">Ringkasan</div>
+                <i class="fa fa-angle-right f20 grey" style="position: absolute;left: 50%;font-size: 40px;top: -2px;"></i>
+              </div>
+              <div>
+                <div class="check_list" id="open_1" style="width:100%;height:420px;padding-bottom:55px;margin-top: 40px;background:#fafafa;padding-top:1px;"> 
+                  <div class="pad10 m10" style="border:1px solid #ddd;border-radius:5px;background:#fff">
+                    <div class="black f14" style="margin-bottom: 5px;"><b>Total Biaya Donasi</b></div>
+                    <div id="don_tot" class="red f14" style="position: absolute;top: 103px;right: 27px;"></div>
+                    <div class="divider"></div>
+                    <div style="text-align:center;padding-top:10px;"><b>Silakan Bayar</b></div>
+                  </div>
+                  <div class="divider"></div>
+                  <div id="don_list_book" data-index="1" style="height: 322px;overflow: auto;"></div>
+                  <div style="display: none"><center><button id="btn-loadmore" class="loadmore" onclick="" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_feeds"></i></button></center></div>
+                </div>
+                <div class="check_list" id="open_2" style="width:100%;height:420px;padding-bottom:55px;display: none;margin-top: 40px"> 
+                  <div class="">
+                    <div class="black f14 pl15" style="padding-top: 10px;">Order id : </div>
+                    <div id="don_order" class="f14 red"></div>
+                    <div class="divider" style="padding-top: 10px;"></div>
+                    <div class="col-xs-12 col-md-12 col-lg-12" style="padding: 10px 15px;padding-top: 5px;">
+                     <div class="col-xs-6 col-md-6 col-lg-6 p0">Total Biaya</div><div class="col-xs-6 col-md-6 col-lg-6 p0" style="text-align: right;" id="don_sum_cos">0</div>
+                     <div class="col-xs-6 col-md-6 col-lg-6 p0 black">Kode Unik</div><div class="col-xs-6 col-md-6 col-lg-6 p0 black" style="text-align: right;" id="don_sum_reward">0</div>
+                     <div class="divider" style="padding-top: 40px"></div>
+                     <div class="col-xs-6 col-md-6 col-lg-6 p0">Total Pembayaran</div><div class="col-xs-6 col-md-6 col-lg-6 p0" style="text-align: right;" id="don_sum_tot">0</div>
+                    </div>
+                  </div>
+                  <div class="divider" style="padding-top: 75px;"></div>
+                  <div id="don_list_book1" data-index="1" style="height: 304px;padding:0px 20px;padding-bottom: 60px;overflow: auto;"></div>
+                  <div style="display: none"><center><button id="btn-loadmore" class="loadmore" onclick="" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_feeds"></i></button></center></div>
+                </div>
+                <div class="check_list" id="open_3" style="width:100%;height:420px;padding-bottom:55px;display: none;text-align: center;margin-top: 40px;position: relative;overflow: auto;background:#fafafa;"> 
+                  <div style="padding:10px;" id="tot_">
+                    <div class="col-xs-12 col-md-12 box_conf" style="border:1px solid  #ddd; border-radius: 5px;padding: 5px;background:#fff;text-align:left">
+                      <div class="f11 col-xs-6 col-md-6 p0" style="padding-bottom:5px;">
+                        <div class="red" >Order ID : <span id="_order_id">0</span></div>
+                      </div>
+                      <div class="f12 col-xs-6 col-md-6 p0" style="text-align: right">
+                        <div class="red" id="metode_transaksi">Transfer Bank</div>
+                      </div>
+                      <div class="divider col-xs-12 col-md-12" style="text-align:left"></div>
+                      <div class="f11 col-xs-6 col-md-6 p0">
+                        <div>Total Biaya</div>
+                        <div>Kode Unix</div>
+                      </div>
+                      <div class="f11 col-xs-6 col-md-6 p0" style="text-align: right">
+                        <div id="_don_tot">0</div>
+                        <div id="don_unix" style="padding-right:5px;"><b>0</b></div>
+                      </div>
+                      <div class="divider col-xs-12 col-md-12" style="border-color: #4D4B8C;display:none;text-align:left;padding-top:5px;"></div>
+                      <div class="col-xs-6 col-md-6 p0" style="text-align:left;">
+                        <div class="f12"><b>Total Pembayaran</b></div>
+                      </div>
+                      <div class="col-xs-6 col-md-6 p0" style="text-align: right">
+                        <div class="f12 red" id="tot_don_pay">0</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="text-align: center;margin-top: 94px;border: 1px solid #ddd;border-radius: 5px;margin: 10px;margin-top: 106px;background: #fff;padding: 10px;" id="don_3_checkout">
+                    <div id="link_payment" style="">
+                      <div style="padding: 10px 20px;font-size:12px;line-height:1.2;padding-top:0px;" id="don_akhir_ket">Silahkan melakukan pembayaran kesalah satu rekening di bawah ini agar proses transaksi dapat dilanjutkan.</div>
+                      <div style="padding: 5px" id="content_payment"></div>
+                      <button class="b-red2" id="btn-link_pay" style="border-radius: 3px;display: none">Bayar Sekarang</button>
+                    </div>
+                    <div id="bank_list" style="display: none;">
+                    </div>
+                    <div id="don_help_va" style="display:none;border:2px solid #4D4B8C;border-radius:5px;margin:10px 20px;text-align:left" class="pointer red" {{action "openModal" "help_donasi"}}>Panduan Transfer Virtual Account</div>
+                  </div>
+                </div>
+              </div>
+            <div>
+              <div class="b-red" id="btn_donasi_checkout" style="position:relative;top:-55px;text-align:center;opacity:0.8;"">
+                <button class="b-trans white f12 b_white radius b_red2" id="don_action" style="padding:5px 50px;margin:13px;" onclick="">Pesan Donasi</button>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="checkout_donasi_old">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="height: 500px;width: 400px;">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" {{action 'closeModal'}} id="close" style="position:absolute;top:6px;display:none;right: 10px;display: none"><i class="fa fa-angle-left fa-2x dark_red"></i></span>
+                <center><span class="modal-title white" id="modal_title">Kotak Pemesanan Donasi</span></center>
+                <span {{action 'closeModal'}} style="cursor:pointer;position:absolute;left:10px;top:7px;" class="pointer dark_red fa fa-angle-left fa-2x"></span>
+              </div>
+              <div class="col-xs-12 col-md-12 col-lg-12" style="border-bottom: 1px solid #ddd;padding: 10px 0px;text-align: center;box-shadow: 1px 1px 2px #888888;">
+                <div class="col-xs-4 col-md-4 col-lg-4 f10 pointer _list p0 red" id="don_kotak" onclick="">Kotak Pemesanan</div>
+                <div class="col-xs-4 col-md-4 col-lg-4 f10 pointer _list p0" id="don_ring" onclick="">Ringkasan Pemesanan</div>
+                <div class="col-xs-4 col-md-4 col-lg-4 f10 pointer _list p0" id="don_konf" onclick="">Konfirmasi</div>
+                <i class="fa fa-angle-right f20 grey" style="position: absolute;left: 30%;font-size: 40px;top: -2px;"></i>
+                <i class="fa fa-angle-right f20 grey" style="position: absolute;right: 30%;font-size: 40px;top: -2px;"></i>
+              </div>
+              <div>
+                <div class="check_list" id="open_1" style="width:100%;height:420px;padding-bottom:55px;margin-top: 40px"> 
+                  <div class="pad20" style="">
+                    <div class="black f14" style="margin-bottom: 5px;">Total Biaya Donasi</div>
+                    <div id="don_tot" class="red f14" style="position: absolute;top: 100px;right: 27px;"></div>
+                    <div>
+                      <select id="don_list_pay" style="background: transparent;box-shadow: 1px 1px 2px #4D4B8C;width: 355px; border: 1px solid #4D4B8C;" class="red">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="divider"></div>
+                  <div id="don_list_book" data-index="1" style="height: 332px;padding:0px 20px;padding-bottom: 60px;overflow: auto;"></div>
+                  <div style="display: none"><center><button id="btn-loadmore" class="loadmore" onclick="" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_feeds"></i></button></center></div>
+                </div>
+                <div class="check_list" id="open_2" style="width:100%;height:420px;padding-bottom:55px;display: none;margin-top: 40px"> 
+                  <div class="">
+                    <div class="black f14 pl15" style="padding-top: 10px;">Order id : </div>
+                    <div id="don_order" class="f14 red"></div>
+                    <div class="divider" style="padding-top: 10px;"></div>
+                    <div class="col-xs-12 col-md-12 col-lg-12" style="padding: 10px 15px;padding-top: 5px;">
+                     <div class="col-xs-6 col-md-6 col-lg-6 p0">Total Biaya</div><div class="col-xs-6 col-md-6 col-lg-6 p0" style="text-align: right;" id="don_sum_cos">0</div>
+                     <div class="col-xs-6 col-md-6 col-lg-6 p0 black">Kode Unik</div><div class="col-xs-6 col-md-6 col-lg-6 p0 black" style="text-align: right;" id="don_sum_reward">0</div>
+                     <div class="divider" style="padding-top: 40px"></div>
+                     <div class="col-xs-6 col-md-6 col-lg-6 p0">Total Pembayaran</div><div class="col-xs-6 col-md-6 col-lg-6 p0" style="text-align: right;" id="don_sum_tot">0</div>
+                    </div>
+                  </div>
+                  <div class="divider" style="padding-top: 75px;"></div>
+                  <div id="don_list_book1" data-index="1" style="height: 304px;padding:0px 20px;padding-bottom: 60px;overflow: auto;"></div>
+                  <div style="display: none"><center><button id="btn-loadmore" class="loadmore" onclick="" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_feeds"></i></button></center></div>
+                </div>
+                <div class="check_list" id="open_3" style="width:100%;height:410px;padding-bottom:55px;display: none;text-align: center;margin-top: 50px;position: relative;overflow: auto;"> 
+                  <center style="padding:10px;" id="tot_">
+                    <div class="red" style="border: 2px solid #4D4B8C;text-align: center;width: 250px;padding: 10px;">
+                      <div>Jumlah Tagihan Pesanan</div>
+                      <div id="tot_don_pay">Rp. 0</div>
+                    </div>
+                  </center>
+                  <div style="text-align: center;">
+                    <div id="link_payment" style="">
+                      <div style="padding: 10px 20px;font-size:12px;line-height:1.2;padding-top:0px;" id="don_akhir_ket">Silahkan melakukan pembayaran kesalah satu rekening di bawah ini agar proses transaksi dapat dilanjutkan.</div>
+                      <div style="padding: 5px" id="content_payment"></div>
+                      <button class="b-red2" id="btn-link_pay" style="border-radius: 3px;display: none">Bayar Sekarang</button>
+                    </div>
+                    <div id="bank_list" style="display: none;">
+                      <div>
+                        <div class="black f14">BCA</div>
+                        <div class="black f14">497 095 5599</div>
+                        <div class="f12">Cabang Cempaka Mas an. iNgawi</div>
+                      </div>
+                      <div>
+                        <div class="black f14">Mandiri</div>
+                        <div class="black f14">164 008 888 8120</div>
+                        <div class="f12">Cabang Cempaka Mas an. iNgawi</div>
+                      </div>
+                      <div>
+                        <div class="black f14">BNI</div>
+                        <div class="black f14">035 082 9119</div>
+                        <div class="f12">Cabang Cempaka Mas an. iNgawi</div>
+                      </div>
+                    </div>
+                    <div id="don_help_va" style="display:none;border:2px solid #4D4B8C;border-radius:5px;margin:10px 20px;text-align:left" class="pointer red" {{action "openModal" "help_donasi"}}>Panduan Transfer Virtual Account</div>
+                  </div>
+                </div>
+              </div>
+            <div>
+              <div class="b-red" style="position:relative;top:-55px;text-align:center;opacity:0.8">
+                <button class="b-trans white f12 b_white radius b_red2" id="don_action" style="padding:5px 50px;margin:13px;" onclick="">Pesan Donasi</button>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="empty_donasi">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="height:450px;">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" {{action 'closeModal'}} id="close"><i class="fa fa-angle-left f20"></i></span>
+                <span class="pointer white" style="padding-left:85px;" id="feed_title">Kotak Pesanan Donasi</span>
+                <span style="float:right"><i class="moco-angle_right"></i></span>
+              </div>
+              <div class="content1" id="scroll_feeds" style="bottom:0;background-color:#fff;height:371px;text-align: center;">
+                <div class="red" style="font-size: 12px; padding: 15px;line-height: 1.2;">Maaf, kotak pesanan anda masih kosong. Silahkan kembali dan lakukan pemesanan.</div>
+                <div class="divider"></div>
+                <div style="padding: 10px 70px;font-size: 12px;color: #444;">Bantu cerdaskan bangsa lewat uluran tanggan anda</div>
+                <div><img src="img/main/empty_donasi.png"></div>
+                <div style="font-size: 12px;padding: 10px 25px;color: #444;">Saatnya anda turun tangan dengan menambah jumlah koleksi ePustaka kesayangan anda agar buku favorit anda bisa dinikmati oleh orang banyak</div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="feeds_old">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="height:450px;">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" {{action 'closeModal'}} id="close"><i class="moco-cross"></i></span>
+                <span class="pointer white" style="padding-left:10px;" id="feed_title"></span>
+                <span style="float:right"><i class="moco-angle_right"></i></span>
+              </div>
+              <div class="content1" id="scroll_feeds" style="bottom:0;background-color:#f4f1f1;height:371px;">
+                  <div class="crop" style="width:100%;height:130px;border-radius:0"><img id="cover" class="potrait" onerror="CovError(this)" style="width:100%"></div>
+                  <div style="position:absolute;top:0;width:100%;height:130px;">
+                    <div class="gradient" style="width:100%;height:130px;"></div>
+                    <div id ="title" class="white" style="z-index:2;position:absolute;bottom:10px;padding-left:10px;font-size:14px;padding-right:10px;"></div>
+                    <div id="review_text"  class="white" style="z-index:2;position:relative;top:-57px;padding-left:10px;font-size:12px;padding-right:10px;line-height:1.2;font-size:10px;"></div>
+                  </div>
+                  <div class="pointer" style="text-align:center;padding-top:10px;padding-bottom:10px;border-bottom:1px solid #ddd;border-top:1px solid #ddd;background-color:#f4f1f1" id="act_list-like"><i class="moco-like" id="like_status"></i> <span id="total_like" style="color:#888">0</span> <span id="list_like" style="color:#888">Orang menyukai ini</span></div>
+                <div id="review1">
+                  <center id="empty">
+                    <div class="moco-balon grey" style="font-size:150px;padding-top:50px"><div class="moco-moco white" style="font-size:55px;position:absolute;top:82px;left:0;right:0;"></div></div>
+                    <div class="grey">Belum ada Komentar</div>
+                  </center>
+                </div>
+              </div>
+              <div class="footer1" style="background-color:#fff">
+                <div class="col-md-10 col-xs-10" style="top:-5px;"><input type="text" id="reviews-input" placeholder="Ketik pesan" class="feeds_input" style="border-radius:5px;background-color:#f4f1f1;padding:0px;"></div>
+                <div class="col-md-2 col-xs-2"><button class="b-trans blue f14" id="btn-review">Kirim</button></div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="feeds">
+          {{#modal-dialog}}
+            <div class="new_feeds">
+              <div class="" style="padding: 0;height: 100%;position: relative;background: #000;margin-right: 300px" id="f_cov">
+                <img id="cover" class="potrait" onerror="CovError(this)" style="position: absolute;top: 0;bottom: 0;margin: auto;right: 0;left: 0;">
+              </div>
+              <div class="b-white" style="padding: 0;height: 100%;position: absolute;width: 300px;top: 0;right: 0;" id="f_cont">
+                <div class="head1">
+                  <span class="pointer dark_red" {{action 'closeModal'}} id="close" style="float: right;padding: 8px;"><i class="moco-cross"></i></span>
+                  <div class="head" style="padding: 10px;">
+                    <img class="minCircle left pointer" src="http://static.ingawi.id/img/default_avatar.png" onerror="AvaError(this)">
+                    <div class="name">
+                      <span class="blue pointer" onclick="location.href='#/main/user/3155'"></span>
+                      <span class="blue f14" id="_sender"></span><span class="blue" id="f_sender">iNgawi User</span><span class="grey f12" id="f_time">. 1m</span>
+                      <div class="black thin f12" id="feed_title" style="line-height: 1;"></div>
+                    </div>
+                  </div>
+                  <div class="divider"></div>
+                  <div id="f_content"></div>
+                  <span style="float:right"><i class="moco-angle_right f12"></i></span>
+                </div>
+                <div class="pointer f12" style="text-align:center;padding-top:10px;padding-bottom:10px;border-bottom:1px solid #ddd;border-top:1px solid #ddd;" >
+                  <span class="fa fa-angle-left dark_red f20" id="f_back" style="float: left;margin-left: 10px;display: none;"></span>
+                  <span class="pointer" id="act_list-like"><i class="moco-like" id="like_status"></i> </span><span id="total_like" style="color:#888">0</span>
+                  <span id="list_like_" style="color:#888">Orang menyukai ini</span>
+                </div>
+                <div class="_review">
+                  <div id="review1">
+                    <center id="empty">
+                      <div class="moco-balon grey" style="font-size:150px;padding-top:50px"><div class="moco-moco white" style="font-size:55px;position:absolute;top:82px;left:0;right:0;"></div></div>
+                      <div class="grey">Belum ada Komentar</div>
+                    </center>
+                  </div>
+                  <div class="footer1" style="background-color:#f4f1f1;position: absolute;bottom: 0;width: 300px;">
+                    <div class="col-md-10 col-xs-10 input_c" style="padding: 10px;"><input type="text" id="reviews-input" placeholder="Ketik pesan" class="feeds_input" style="border-radius:5px;background-color:#fff;padding:3px;width: 230px;border: 1px solid #ddd"></div>
+                    <div class="col-md-2 col-xs-2" style="padding: 0;"><button class="b-trans blue f14" id="btn-review" style="padding: 16px 2px;line-height: 1;margin: 0;">Kirim</button></div>
+                  </div>
+                </div>
+                <div class="_like" style="display: none;">
+                  <div id="list_user"></div>
+                </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="like_list">
+          {{#modal-dialog}}
+            <div class="modal-feeds">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" id="back_list"><i class="moco-angle_left"></i></span>
+                <span class="white" style="padding-left:77px;"><span id="follow_title"></span>
+                <span class="dark_red" style="float:right" {{action 'closeModal'}}><i class="moco-cross"></i></span>
+              </div>
+              <div class="content1" style="bottom:0;">
+                <div id="list_user">
+                </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="follow">
+          {{#modal-dialog}}
+            <div class="modal-feeds">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" {{action 'closeModal'}} style="display:none"><i class="moco-angle_left"></i></span>
+                <span class="white" style="padding-left:77px;"><span id="follow_title"></span>
+                <span style="float:right;" {{action 'closeModal'}} class="pointer dark_red"><i class="moco-cross"></i></span>
+              </div>
+              <div class="content1" style="bottom:0;">
+                <div id="list_user">
+                </div>
+                <div><center><button id="btn-loadmore_follow" class="loadmore" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_follow"></i></button></center></div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="donatur">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="height: 510px;">
+              <div><img src="img/main/donasi.png" style="width:100%"></div>
+              <div class="content1" style="bottom:0;top: 212px;height: 235px;">
+                <div id="list_user"></div>
+              </div>
+              <div style="position: absolute;bottom: 0px;left: 0;right: 0;"><center><button disabled="disabled" id="shelf_read" {{action "closeModal"}} class="f14 b-red2 b_red2 white" style="width: 300px;">Lanjut Membaca<i class="" id="icn-loadmore_follow"></i></button></center></div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="token">
+          {{#modal-dialog}}
+            <div class="modal-feeds">
+              <div class="head1 b-red" style="padding-top10px;">
+                <span class="pointer" {{action 'closeModal'}}><i class="fa fa-angle-left fa-2x dark_red" style="position:absolute;top:6px;"></i></span>
+                <span class="" style="padding-left:108px;color:#fff"><span id="follow_title">Payment Gateway</span>
+              </div>
+              <div class="content1" style="text-align:center">
+                <div class="medium f20" style="padding-top:50px">Hello !</div>
+                <div class="f16" style="padding-top:10px">Here is the one way</div>
+                <div class="f16" style="line-height:1">to add your balance</div>
+                <div style="padding-top:30px"><center><input type="text" id="token_input" class="form-control" placeholder="Please enter your voucher number" style="width:230px;font-size:12px;padding:15px 15px;"></center></div>
+              </div>
+              <center>
+                <button class="small radius b-green white" type="submit" onclick="topup('token')" style="position:absolute;left:0;right:0;margin:auto;width:100px;border-radius:5px;padding-top:7px;padding-bottom:8px;margin-top:300px;">Confirm<i class="fa" id="log-load"></i></button>
+              </center>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="matm">
+          {{#modal-dialog}}
+            <div class="modal-feeds">
+              <div class="head1 b-red" style="padding-top:10px;">
+                <span class="pointer" {{action 'closeModal'}}><i class="fa fa-angle-left fa-2x dark_red" style="position:absolute;top:6px;"></i></span>
+                <span class="" style="padding-left:120px;color:#fff"><span id="follow_title">Mandiri SMS</span>
+              </div>
+              <div class="content1" style="text-align:center">
+                <div class="medium f20" style="padding-top:50px">It`s Easy !</div>
+                <div class="f16" style="padding-top:10px" id="text1">Your transaction will be</div>
+                <div class="f16" style="line-height:1"  id="text2">continued via sms</div>
+                <div style="padding-top:30px"><center><input type="text" id="phone" class="form-control" placeholder="+(62) Enter your phone number" style="width:230px;font-size:12px;padding:15px 15px;" onkeypress='validate(event)'></center></div>
+              </div>
+              <center>
+                <button class="small radius b-green white" type="submit" onclick="topup('matm_act')" style="position:absolute;left:0;right:0;margin:auto;width:100px;border-radius:5px;padding-top:7px;padding-bottom:8px;margin-top:300px;" id="btn-act">Confirm<i class="fa" id="log-load"></i></button>
+              </center>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="synopsis">
+          {{#modal-dialog}}
+            <div class="modal-feeds">
+              <div class="head1 b-red" style="padding-top:10px;">
+                <span class="pointer" {{action 'closeModal'}} style="position:absolute;top:6px;"><i class="fa fa-angle-left fa-2x dark_red"></i></span>
+                <span class="" id="follow_title-size" style="padding-left:140px;color:#fff"><span id="follow_title">Sinopsis</span>
+                </span>
+                <span id="share_synop" style="cursor:pointer;position:absolute;right:10px;top:13px;" class="pointer dark_red moco-arrow_"></span>
+              </div>
+              <div class="content1" style="padding:15px;bottom:5px;">
+                <div class="col-xs-12 col-md-12" style="border-bottom:1px solid #ddd; padding-bottom:5px;margin-bottom:5px;">
+                    <div class="col-md-2 col-xs-2 crop" style="padding-left:0;"><img {{bindAttr src=App.book_cover}}class="potrait"></div>
+                    <div class="col-md-9 col-xs-9" style="padding-top:5px">
+                      <div class="f14">{{App.book_title}}</div>
+                      <div class="f10 blue" style="line-height:1.2">{{App.book_authors}}</div>
+                    </div>
+                  </div>
+                <div id="detil_synopsis" class="f12"></div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="transfer">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="height:410px;">
+              <div class="head1 b-red" style="padding-top:10px;">
+                <span class="pointer" {{action 'closeModal'}} style="position:absolute;top:6px;"><i class="fa fa-angle-left fa-2x dark_red"></i></span>
+                <span class="" style="padding-left:118px;color:#fff"><span id="follow_title">Manual Transfer</span>
+              </div>
+              <div class="content1" style="padding:15px;bottom:5px;">
+                <div class="panel panel-default">
+                  <div class="panel-heading" style="background-color:#c92036;text-align:left;color:#fff">Price List</div>
+                  <div class="panel-body" style="padding:0">
+                    <table class="table" style="margin-top:10px;">
+                      <tbody>
+                        <tr class="tab-noborder">
+                          <td style="border:0">50 Point</td>
+                          <td style="border:0">IDR</td>
+                          <td style="border:0;text-align:right">50000</td>
+                        </tr>
+                        <tr>
+                          <td style="border:0">100 Point</td>
+                          <td style="border:0">IDR</td>
+                          <td style="border:0;text-align:right">100000</td>
+                        </tr>
+                        <tr>
+                          <td style="border:0">200 Point</td>
+                          <td style="border:0">IDR</td>
+                          <td style="border:0;text-align:right">200000</td>
+                        </tr>
+                        <tr>
+                          <td style="border:0">500 Point</td>
+                          <td style="border:0">IDR</td>
+                          <td style="border:0;text-align:right">500000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" style="background-color:#c92036;text-align:left;color:#fff">Bank Destination Number</div>
+                  <div class="panel-body" style="padding:0">
+                    <table class="table">
+                      <tbody>
+                        <tr class="tab-noborder">
+                          <td style="border:0">BCA</td>
+                          <td style="border:0;text-align:right">4970809100</td>
+                        </tr>
+                        <tr>
+                          <td style="border:0">Mandiri</td>
+                          <td style="border:0;text-align:right">1460000957896</td>
+                        </tr>
+                        <tr>
+                          <td style="border:0">Danamon</td>
+                          <td style="border:0;text-align:right">3560236667</td>
+                        </tr>
+                        <tr>
+                          <td style="border:0">BII</td>
+                          <td style="border:0;text-align:right">2164857543</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="divider"></div>
+                    <div style="padding:8px;">Cab. BSD Tangerang An. PT. Woolu Aksara Maya</div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" style="background-color:#c92036;text-align:left;color:#fff">How To</div>
+                  <div class="panel-body" style="text-align:left">
+                    <div style="text-align:justify;word-break:break-word;line-height:1.4">Silakan transfer sejumlah uang ke salah satu rekening yang tertera diatas disesuaikan dengan poin yang akan kamu beli</div>
+                    <div style="padding-top:10px;text-align:justify;word-break:break-word;line-height:1.4">Selanjutnya kirimkan foto bukti transaksi kamu ke salah satu alamat di bawah ini, ingat cukup konfirmasi ke salah satu alamat yang kamu inginkan,</div>
+                    <table class="table" style="margin-top:15px;">
+                      <tbody>
+                        <tr>
+                          <td style="border:0">WhatsApp or SMS</td>
+                          <td style="border:0;text-align:right">081 213 200 582</td>
+                        </tr>
+                        <tr>
+                          <td style="border:0">Line</td>
+                          <td style="border:0;text-align:right">financemoco</td>
+                        </tr>
+                        <tr>
+                          <td style="border:0">Email</td>
+                          <td style="border:0;text-align:right">finance@aksaramaya.com</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="point">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="height:410px;">
+              <div class="head1 b-red" style="padding-top:10px;">
+                <span class="pointer" {{action 'closeModal'}}><i class="fa fa-angle-left fa-2x dark_red" style="position:absolute;top:6px;"></i></span>
+                <span class="" style="padding-left:120px;color:#fff"><span id="follow_title">Choose Point</span>
+              </div>
+              <div class="content1" style="text-align:center">
+                <div height="" style="margin-top:10px;color:#fff;margin-left:5px;margin-right:5px">
+                    <ul class="horizontal-slide" id="list_vouchers" style="overflow:hidden;list-style:none;margin-left:10px;">
+                    </ul>
+                </div>
+              </div>
+              <center>
+                <button class="small radius b-red2 white" type="submit" id="btn-select" disable:"disabled" onclick="" style="position:absolute;left:0;right:0;margin:auto;width:100px;border-radius:5px;padding-top:7px;padding-bottom:8px;margin-top:320px;">Send <i class="fa" id="log-load"></i></button>
+              </center>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="get-books">
+          {{#modal-dialog}}
+            <div class="get-books">
+              <div  {{action 'closeModal'}} style="position:absolute;" class="pointer"><i class="moco-cross_o grey"></i></div>
+              <div style="padding-bottom:10px">Buy</div>
+              <button id="point_buy" style="font-size:11px">0 Point</button>
+              <div style="padding-bottom:10px">Rent</div>
+              <button  id="point_rent" style="font-size:11px">0 Point</button>
+              <div style="padding-bottom:10px;">Borrow</div>
+              <button {{action "openModal" "borrow"}} id="borrow" style="font-size:11px">Borrow</button>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="borrow">
+          {{#modal-dialog}}
+            <div class="modal-feeds">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" {{action 'closeModal'}}><i class="moco-angle_left"></i></span>
+                <span class="white" style="padding-left:60px;"><span id="follow_title">Pinjam dari Perpustakaan</span>
+                <span style="float:right;display:none" {{action 'closeModal'}}><i class="moco-cross white"></i></span>
+              </div>
+              <div class="content1" style="bottom:0;line-height:1.5">
+                <div id="list_pustaka" style="overflow:hidden;padding-left:10px;padding-right:10px;">
+                </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="rec_detail">
+          {{#modal-dialog}}
+            <div class="header-color-divider" style="background-color:#c92036">
+              <span id="btn_trans" {{action 'close'}} class="x fa fa-angle-left left moco-1x5 dark_red" style="cursor:pointer;color:#fff;font-size:25px;padding-top:8px;padding-left:10px;line-height:0.7;"></span>
+              <center style="padding-top:7px;">
+              <span id="follow" class="modal-title" style="color:#fff"></span></center>
+            </div>
+            <div style="padding-top:5px;">
+              <div style="position:relative;top:25px;overflow-y:scroll;max-height:395px;padding:5px;">
+                <div id="content" style=""> 
+                  <div id="rec_det" style="">
+                  <div class="_head">
+                    <div class="col-md-2 col-xs-2"style="padding-top:10px;"><img  id="rec_ava" class="media-object circle" src="images/icon/avatar.png" style="width:40px;height:40px;cursor:pointer" ></a></div>
+                    <div class="col-md-10 col-xs-10" style="font-size:12px;padding-top:10px;padding-left:5px;">
+                      <div class="medium" id="name_rec"></div>
+                      <div style="color:#888" id="">Kirim Rekomendasi</div>
+                    </div>
+                  </div>
+                  <div class="_middle">
+                    <div class="col-md-3 col-xs-3" style="padding-top:10px;padding-left:5px;"><img id="rec_cov" class="shadow" src="images/bg.png" style="height:100px;cursor:pointer;"></div>
+                    <div class="col-md-9 col-xs-9" style="padding-top:10px;padding-left:0px;">
+                      <div id="rec_title" class="medium"></div>
+                      <div style="font-size:12px" class="medium"><span id="rec_author"></span></div>
+                      <div id="rec_desc"></div>
+                    </div>
+                  </div>
+                  <div class="_tail">
+                    <div style=";" id="rec_msg"></div>
+                    <div class="divider" style="padding:0px"></div>
+                    <div style="font-size:12px">With:</div>
+                    <div id="rec_user" class="medium"></div>
+                    <div id="rec_time">5 menit yang lalu</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="trans_failed">
+          {{#modal-dialog}}
+            <div class="confirm b-back">
+              <div class="b-red" {{action 'closeModal'}}>
+                <div class="col-md-3 col-xs-3"><i class="moco-alert_o white" style="font-size:40px;" id="icn_failed"></i></div>
+                <div class="col-md-9 col-xs-9"><span class="regular f14" style="position:absolute;margin:5% auto">{{App.Failed_Alert}}</span></div>
+              </div>
+              <div class="center black f12" style="line-height:1.4;padding-left:15px;padding-right:15px;">{{App.Failed_Content}}
+              </div>
+              <center style="position:absolute;bottom:0;width:100%">
+                <ul class="nav nav-justified" id="nav_search" style="border-top:1px solid #ddd">
+                  {{#if App.isPopUp}}
+                    <li class="search" id="act_cancel" {{action "closeModal"}}><a class="pointer">Close</a></li>
+                    <li class="search" id="resend_email " onclick="resend_verification()"><a class="pointer">Resend</a></li>
+                  {{else}}
+                    <li class="search" id="act_cancel" {{action "closeModal"}}><a class="pointer">Close</a></li>
+                  {{/if}}
+                </ul>
+              </center>
+              <!-- <center>
+                <button class="b_red2 red2 b-trans f12" {{action 'closeModal'}} id="act_try" style="position:absolute;left:0;right:0;margin:auto;width:125px;border-radius:5px;padding-top:7px;padding-bottom:8px;margin-top:30px;">Ulangi!</button>
+              </center> -->
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="trans_success">
+          {{#modal-dialog}}
+            <div class="confirm b-back">
+              <div class="b-red" {{action 'closeModal'}}>
+                <div class="col-md-3 col-xs-3"><i class="moco-check_o2 white" style="font-size:40px;"></i></div>
+                <div class="col-md-9 col-xs-9" style="padding-top:10px"><span class="medium">Selesai<span class="regular f12">{{App.Success_Alert}}</span></span></div>
+              </div>
+              <div class="center black">
+                {{App.Success_Content}}
+              </div>
+              <div style="position:absolute;bottom:5px;left:0;right:0;">
+                <center>
+                  <button class="b_red2 black b-red2 f14" {{action 'closeModal'}} style="border-radius:30px;padding:6px; font-size:12px;height:35px;width:120px;color:#fff">Selesai</button>
+                </center>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="trans_success_book">
+          {{#modal-dialog}}
+            <div class="confirm b-back">
+              <div class="b-red" {{action 'closeModal'}}>
+                <div class="col-md-3 col-xs-3"><div class="midCircle"><i class="moco-check white" style="font-size:21px;"></i></div></div>
+                <div class="col-md-9 col-xs-9" style="padding-top:10px"><span class="medium" id="suk_header">Selesai<span class="regular f12">{{App.Success_Alert}}</span></span></div>
+              </div>
+              <div class="center black">
+                {{App.Success_Content}}
+              </div>
+              <div style="position:absolute;bottom:5px;left:0;right:0;">
+                <center>
+                  <button class="b_red2 black b-red2 f14" {{action 'closeModal'}} id="b_trans_suk" style="border-radius:5px;padding:6px; font-size:12px;height:35px;width:120px;color:#fff">Selesai</button>
+                </center>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="share">
+          {{#modal-dialog}}
+            <div class="modal-feeds b-back" style="height:215px;width:200px">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" {{action 'closeModal'}}><i class="moco-angle_left"></i></span>
+                <span class="white" style="padding-left:60px;"><span id="follow_title">Share</span>
+                <span style="float:right;display:none" {{action 'closeModal'}}><i class="moco-cross"></i></span>
+              </div>
+              <div style="cursor:pointer;padding:5px 40px;margin-top:10px;" id="facebook"><span class="fa fa-facebook" style="width:30px;color:#4b62ba"></span><span class="">Facebook</span>
+              </div>
+              <div style="cursor:pointer;padding:5px 40px;" id="twitter"><span class="fa fa-twitter blue" style="width:30px; color:#1DA1F2;"></span><span class="">Twitter</span>
+              </div>
+              <div style="cursor:pointer;padding:5px  40px;" id="google"><span class="fa fa-google-plus" style="width:30px; color: #c92036;"></span><span class="">Google +</span>
+              </div>
+              <div style="cursor:pointer;padding:5px  40px;" id="linkedin"><span class="fa fa-linkedin blue" style="width:30px; color:#007bb5;"></span><span class="">Linked In</span>
+              </div>
+              <div style="cursor:pointer;padding:5px  40px;" id="email"><span class="fa fa-envelope-o" style="padding-right:15px;line-height:1;font-size:12px;color:#4D4B8C"></span><span class="">Email</span>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="join">
+          {{#modal-dialog}}
+            <div class="modal-feeds b-back" style="height:274px;width:270px">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" {{action 'closeModal'}}><i class="moco-angle_left"></i></span>
+                <span class="white" style="padding-left:75px;"><span id="follow_title">Gabung Pustaka</span>
+                <span style="float:right;display:none" {{action 'closeModal'}}><i class="moco-cross"></i></span>
+              </div>
+              <div style="padding-top:5px;">
+                <div id="content"> 
+                <div id="membership" style="padding-top:10px;">
+                  <center>
+                  <div class="black" style="font-size:12px">Kamu akan bergabung menjadi anggota</div>
+                  <div class="black" style="font-size:12px">dari e-Pustaka ini</div>
+                  <button class="btn btn-default" style="background-color: #1ebe8e;color:#fff;padding:5px 25px;border-radius: 21px;margin-top:20px;width:120px;font-size:12px;border-color:transparent" id="points_join">0 Points</button>
+                  </center>
+                </div>
+                <div id="unix" style="">
+                  <center>
+                  <div style="margin-bottom:20px;margin-top:30px"><input id="unix_code" type="text" class="form-control" placeholder="Or insert your unicode" style="height:30px;width:230px;border-radius:4px;font-size:10px"></div>
+                  <button class="btn btn-default" style="background-color: #1ebe8e;color:#fff;padding:5px 25px;border-radius:21px;width:120px;font-size:12px;border-color:transparent" onclick="unix_member()">Konfirmasi</button>
+                  </center>
+                </div>
+                </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="unix">
+          {{#modal-dialog}}
+            <div class="modal-feeds b-back" style="height:274px;width:270px">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" {{action 'closeModal'}}><i class="moco-angle_left"></i></span>
+                <span class="white" style="padding-left:75px;"><span id="follow_title">Join Pustaka</span>
+                <span style="float:right;display:none" {{action 'closeModal'}}><i class="moco-cross"></i></span>
+              </div>
+              <div style="padding-top:5px;">
+                <div id="content"> 
+                <div id="membership" style="padding-top:10px;">
+                  <center>
+                  <div class="black" style="font-size:12px">You`ll become a member</div>
+                  <div class="black" style="font-size:12px">of this e-Pustaka</div>
+                </div>
+                <div id="unix" style="">
+                  <center>
+                  <div style="margin-bottom:20px;margin-top:30px"><input id="unix_code" type="text" class="form-control" placeholder="Or insert your unicode" style="height:30px;width:230px;border-radius:4px;font-size:10px"></div>
+                  <button class="btn btn-default" style="background-color: #1ebe8e;color:#fff;padding:5px 25px;border-radius:21px;width:120px;font-size:12px;border-color:transparent;margin-top:45px;" onclick="unix_member()">Confirm</button>
+                  </center>
+                </div>
+                </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="recommend">
+          {{#modal-dialog}}
+            <div class="modal-feeds">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" {{action 'closeModal'}} id="close" style="position:absolute;top:6px;display:none"><i class="fa fa-angle-left fa-2x dark_red"></i></span>
+                <center><span class="modal-title white" id="modal_title">Kirim rekomendasi ke</span></center>
+                <span {{action 'closeModal'}} style="cursor:pointer;position:absolute;right:10px;top:13px;" class="pointer dark_red moco-cross"></span>
+              </div>
+              <div id="" class="search_user" style="margin-top:0px;padding:10px;">
+                <div class="input-group" style="padding-bottom:0">
+                  <input type="text" style="-webkit-box-shadow: inset 0 1px 2px transparent;border-right-color:transparent;border-top-left-radius: 5px;border-bottom-left-radius: 5px;" class="form-control" id="users" placeholder="Pencarian....">
+                  <span class="input-group-addon" style="background-color:#fff;"><i id="icon-search" class="fa fa-search pointer red" onclick="search_user()"></i></span>
+                </div>
+              </div>
+              <div id="list_user" style="height:305px;overflow:auto;padding-bottom:55px;"> 
+              </div>
+              <div class="b-red" style="position:relative;top:-48px;text-align:center;opacity:0.8">
+                <button class="b-trans white f12 b_white radius" id="right_action" style="padding:5px 50px;margin:13px;" onclick="go_rec_user()">Kirim</button>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="u_recommend">
+          {{#modal-dialog}}
+            <div class="modal-feeds">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" onclick="javascript:$('#register').click()" id="close" style="position:absolute;top:6px;"><i class="fa fa-angle-left fa-2x white"></i></span>
+                <center><span class="modal-title white" id="modal_title">Teman yang disarankan</span></center>
+                <span {{action 'closeModal'}} style="cursor:pointer;position:absolute;right:10px;top:13px;display:none" class="pointer dark_red moco-cross"></span>
+              </div>
+              <div id="suggest" style="height:353px;overflow:auto;padding-bottom:55px;padding-left: 15px;"> 
+              </div>
+              <div class="b-red" style="position:relative;top:-48px;text-align:center;opacity:0.8">
+                <button class="b-trans white f12 b_white radius" id="right_action" style="padding:5px 50px;margin:13px;" onclick="location.href='#/main/store/index'">I'm Ready Now</button>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="gift">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="width:250px;height:300px">
+              <div class="head1 b-red">
+              <span class="pointer dark_red" {{action 'closeModal'}} id="close" style="position:absolute;top:6px"><i class="fa fa-angle-left fa-2x dark_red"></i></span>
+                <center><span class="modal-title white" id="modal_title">Send Point as Gift</span></center>
+            </div>
+            <div style="padding-top:20px;">
+              <div id="content"> 
+              <div>
+                <center>
+                  <div class="photoCircle_" style="margin-top:15px;"><div id="point_spent" style="font-size:40px;margin-top:5px;">10</div><div id="g_point" style="padding-top:10px;font-size:12px">Points</div></div>
+                  <div id="desc" class="grey" style="font-size:14px;margin-top:10px;color:#888">-</div>
+                </center>
+              </div>
+              <div style="padding-top:30px;">
+                <center><button class="btn btn-default" style="background-color: #1ebe8e;color:#fff;padding:5px 40px;border-radius: 21px;border-color:transparent" id="conf_gift">Confirm</button></center>
+              </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="rec_user">
+          {{#modal-dialog}}
+            <div class="modal-feeds">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" onclick="recommend()" id="close" style="position:absolute;top:6px"><i class="fa fa-angle-left fa-2x"></i></span>
+                <center><span class="modal-title white">Tambahkan Pesan</span></center>
+              </div>
+              <div style="padding:10px;">
+                <div id="content"> 
+                <div id="rec_" style="">
+                  <div>Kirim Rekomendasi ke:</div>
+                  <div id="list_user" style="margin-top:10px" class="blue"></div>
+                  <div class="divider" style="padding:0"></div>
+                  <div style="padding:5px 0px;margin-top:10px">Tambahkan Pesan Pribadi</div>
+                  <center style="margin-top:5px;">
+                  <div style="padding-bottom:10px;">
+                    <textarea id="msg_rec" type="text" class="form-control input-group-sm" placeholder="Tambah Pesan Pribadi" style="height:80px;border:2px solid #4D4B8C;font-size:14px;background-color:#f4f1f1;resize:none;"></textarea>
+                  </div>
+                  </center>
+                  <div style="margin-left:145px;">
+                    <button class="btn btn-default" style="background-color: #ddd;color:#444;padding:5px 5px;border-radius:21px;border-color:transparent;width:90px;" {{action "closeModal"}} >Batal</button>
+                    <button class="btn btn-default" style="background-color: #4D4B8C;color:#fff;padding:5px 5px;border-radius:21px;border-color:transparent;width:90px;" onclick="recommend_books()">Kirim<i id="moco-load3" class="" style="padding-left:5px;"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="confirm">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="width:300px;height:300px">
+              <div class="head1 b-red" style="padding-top:10px;">
+                <span class="pointer dark_red" id="act_close" style="position:absolute;top:6px;"><i class="fa fa-angle-left fa-2x"></i></span>
+                <center><span class="modal-title white">Konfirmasi Transaksi</span></center>
+              </div>
+              <div class="content1" style="text-align:center">
+                <div class="medium f20" style="padding-top:50px;display:none">It`s Easy !</div>
+                <div class="f12" style="padding-top:25px">Transaksi Anda akan </div>
+                <div class="f12" style="line-height:1">menghabiskan poin</div>
+                <div class="blue" style="font-size:60px;margin-top:40px;" id="point_confirm"></div>
+                <div class="blue" style="font-size:14px;margin-top:20px;">Points</div>
+              </div>
+              <center>
+                <button class="small radius b-green white" type="submit" id="act_confirm" style="position:absolute;left:0;right:0;margin:auto;width:100px;border-radius:5px;padding-top:7px;padding-bottom:8px;margin-top:205px;">Confirm<i class="fa" id="log-load"></i></button>
+              </center>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="ads">
+          {{#modal-dialog}}
+            <div class="confirm b-back" style="height:250px">
+              <div class="head1" style="height:30px;padding:5px;">
+                <!--<span class="pointer dark_red" {{action 'closeModal'}}><i class="moco-angle_left"></i></span>-->
+                <span class="black" style="padding-left:77px;">Di sponsori oleh</span>
+                <span style="float:right;padding-top:0px;font-size:12px;padding-right:4px;" {{action 'closeModal'}} class="black"><i class="moco-cross"></i></span>
+              </div>
+              <div>
+                <div id="content"> 
+                <div style="padding-top:10px;">
+                  <center>
+                    <div id="image_ads"><img id="ads_img" src="" style="height:130px;" onerror="CovError(this)"></div>
+                  </center>
+                </div>
+                    <button class="btn btn_rounded" id="ads_act" {{action "close"}} style="border-radius:30px;width:120px;position:absolute;bottom:25px;left:0;right:0;margin:auto;padding:10px;font-size:12px;" disabled=disabled>Mengunduh ...</button>
+                </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="dialog">
+          {{#modal-dialog}}
+          <div class="confirm b-white">
+              <div class="b-red" {{action 'closeModal'}}>
+                <div class="col-md-3 col-xs-3"><div id="icn-success"><i class="white moco-ask_o2" style="font-size:40px;"></i></div></div>
+                <div class="col-md-9 col-xs-9"><span class="regular f14" style="position:absolute;">Konfirmasi</span></div>
+              </div>
+              <div class="content1" style="text-align:center;padding:10px;">
+                <div class="medium f14" style="padding:10px;padding-top:20px;" id="text_alert11">{{App.Dialog}}</div>
+                <div class="f14" style="padding-top:0px" id="text_alert2">Apakah ingin Melanjutkan?</div>
+              </div>
+              <center style="position:absolute;bottom:0;width:100%">
+                <ul class="nav nav-justified" id="nav_search" style="border-top:1px solid #ddd">
+                  <li class="search" id="act_cancel" {{action "closeModal"}}><a class="pointer">Batal</a></li>
+                  <li class="search" id="act_confirm" onclick=""><a class="pointer">Konfirmasi</a></li>
+                </ul>
+              </center>
+            </div>
+            <!--<div class="modal-feeds" style="height:200px;width:300px;">
+              <div class="head1 b-red" style="padding-top:6px;">
+                <span class="pointer dark_red" id="close" {{action "closeModal"}} style="position:absolute"><i class="fa fa-angle-left fa-2x white"></i></span>
+                <center style="padding-top:3px;"><span class="modal-title white">Konfirmasi</span></center>
+              </div>
+              <div class="content1" style="text-align:center">
+                <div class="medium f14" style="padding:10px;padding-top:20px;" id="text_alert11">{{App.Dialog}}</div>
+                <div class="f14" style="padding-top:0px" id="text_alert2">Apakah ingin Melanjutkan?</div>
+              </div>
+              <div>
+                <button class="small radius b-red white" type="submit" id="act_cancel" style="position:absolute;left:10px;;margin:auto;width:100px;border-radius:5px;padding-top:7px;padding-bottom:8px;margin-top:100px;">Batal<i class="fa" id="log-load"></i></button>
+                <button class="small radius b-green white" type="submit" id="act_confirm" style="position:absolute;right:10px;margin:auto;width:100px;border-radius:5px;padding-top:7px;padding-bottom:8px;margin-top:100px;">Ya<i class="fa" id="log-load"></i></button>
+              </div>
+            </div>-->
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="conf_dialog">
+          {{#modal-dialog}}
+            <div class="confirm b-back">
+              <div class="b-red" {{action 'closeModal'}}>
+                <div class="col-md-3 col-xs-3"><div id="icn-success"><i class="white moco-ask_o2" style="font-size:40px;"></i></div></div>
+                <div class="col-md-9 col-xs-9" id="text_conf"><span class="regular f14" style="position:absolute;">{{App.Success_Alert}}</span></div>
+              </div>
+              <div class="center black f12" style="line-height:1.4;padding-left:15px;padding-right:15px;margin-top:10px">{{App.Success_Content}}
+              </div>
+              <center style="position:absolute;bottom:0;width:100%">
+                <ul class="nav nav-justified" id="nav_search" style="border-top:1px solid #ddd">
+                  <li class="search" id="act_cancel" onclick=""><a class="pointer">Batal</a></li>
+                  <li class="search" id="act_try" onclick=""><a class="pointer">Konfirmasi</a></li>
+                </ul>
+              </center>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="password">
+          {{#modal-dialog}}
+            <div class="confirm b-white">
+              <div class="b-red" {{action 'closeModal'}}>
+                <div class="col-md-3 col-xs-3"><div class="midCircle" id="icn-success"><i class="moco-lock"></i></div></div>
+                <div class="col-md-9 col-xs-9"><span class="regular f14" style="position:absolute;margin:5% auto">Masukkan kata sandi</span></div>
+              </div>
+              <div class="content1" style="text-align:center;padding:10px;">
+                <div class="f12" style="padding-top:0px">Transaksi Kamu akan</div>
+                <div class="f12" style="line-height:1">di proses dengan konfirmasi sandi</div>
+                <div style="padding-top:20px"><center><input type="password" id="input_password" class="form-control" placeholder="Masukkan kata sandi" style="width:230px;font-size:12px;padding:15px 15px;"></center></div>
+              </div>
+              <center style="position:absolute;bottom:0;width:100%">
+                <ul class="nav nav-justified" id="nav_search" style="border-top:1px solid #ddd">
+                  <li class="search" id="act_cancel" {{action "closeModal"}}><a class="pointer">Batal</a></li>
+                  <li class="search" id="act_password" onclick=""><a class="pointer">Konfirmasi</a></li>
+                </ul>
+              </center>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="change_password">
+          {{#modal-dialog}}
+            <div class="modal-feeds">
+              <div class="head1 b-red">
+              <span class="pointer grey modal-right" id="close" style="position:absolute;" {{action 'openModal' 'profile'}}><i class="fa moco-cross"></i></span>
+              <center><span class="modal-title white">Ganti Sandi</span></center>
+              <span {{action "update_password"}} class="modal-right white" style="cursor:pointer;display: none">Save</span>
+            </div>
+            <center>
+            <div style="padding-top:45px;width:260px;">
+              <input id="old-pass" type="password" class="form-control" placeholder="Sandi Lama" style="height:32px;margin-bottom:20px;">
+
+              <input id="change-pass1" type="password" class="form-control" placeholder="Sandi baru" style="height:32px;">
+              <input id="change-pass2" type="password" class="form-control" placeholder="Ulangi sandi" style="height:32px;margin-bottom:20px;">
+            </div>
+            </center>
+
+              <div style="margin-top:25px;">
+                <button class="small radius b-red2 white" type="submit" {{action "update_password"}} style="position:absolute;left:0;right:0;margin:auto;width:100px;border-radius:3px;padding-top:7px;padding-bottom:8px;">Simpan<i class="fa" id="log-load"></i></button>
+              </div>
+              <!--
+              <input id="change-pass1" type="password" class="form-control" placeholder="New Password" style="margin-top:29px;height:40px;margin-bottom:0px;">
+              <input id="change-pass2" type="password" class="form-control" placeholder="Repeat Password" style="height:40px;">-->
+            </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="profile">
+          {{#modal-dialog}}
+            <div class="modal-feeds">
+              <div class="head1 b-red" style="padding-top:10px;">
+                <!-- <span class="pointer dark_red" id="close" {{action "closeModal" }} style="position:absolute;top:6px"><i class="fa fa-angle-left fa-2x"></i></span> -->
+                <span class="pointer grey modal-right" id="close" style="position:absolute;" {{action 'closeModal'}}><i class="fa moco-cross"></i></span>
+                <center><span class="modal-title white">Ganti Profil</span></center>
+              </div>
+              <div class="scrollable" style="height:360px;top:32px;width:100%;padding:0;left:0;overflow-y:auto;">
+                <div class="grey" style="padding-top:20px;font-size:12px;">
+                  <center><canvas id="ava" width="130" height="130" style="border-radius:50%;margin-left:30px;">
+                  </canvas>
+                  <canvas id="temp_ava" width="210" height="210" style="display:none;">
+                  </canvas>
+                  <div class="fa moco-pen_o pointer grey" style="position: relative;right: 42px;font-size: 25px;background: #fff;border-radius: 50%;border:1px solid #fff;top: -;top: -7px;" id="photo_edit"  {{action "change_photo"}}></div>
+                  </center>
+                  <input style="display:none;" id="fileDialog" type="file" accept=".png,.img,.jpg,.gif,.bmp,.jpeg" />
+                  <center {{action "change_photo"}} class="grey" style="padding-top:10px;cursor:pointer"><div data-container="body" data-toggle="popover" data-placement="bottom" data-content="Upload or take a profile picture <br> by clicking on the  &lsquo; Edit Photo &rsquo;" data-html="true" style="display:none">Ganti Foto</div></center>
+                  <center style="padding-top:8px;" data-container="body" data-toggle="popover" data-placement="top" data-content="Field out all the field below and <br> click the save button" data-html="true" id="input_profile">
+                  <div class="input-group" style="width:260px;height:32px;">
+                    <input id="p_user" type="text" class="form-control" style="height:32px;border-right-color:transparent;color:#888;" onclick="couch_clear('#input_profile',2)">
+                    <span class="input-group-addon" style="background-color:#fff;border-left-color:transparent;"><div {{action "cleared" "p_user"}} id="clear_user" style="color:#ddd;cursor:pointer;padding-right:10px;" class="fa fa-times-circle" ></div></span>
+                  </div>
+                  <!-- <div class="input-group" style="width:260px;padding-bottom:0px;height:32px;border-bottom:0;">
+                    <input id="p_email" style="height:32px;color:#888;border-bottom:0;" type="text" disabled="disabled" class="form-control">
+                  </div>
+                  <div class="input-group" style="width:260px;padding-bottom:0px;height:32px;border-bottom:1px solid #ddd;"><input {{action 'openModal' 'change_password'}} id="password" value="password here" type="password" class="form-control grey" placeholder="Password" style="padding-top:0px;margin-bottom:0px;height:32px;width:260px;color:#888;border-bottom:0;padding-top:8px;" onclick="couch_clear('#input_profile',2)"></div>
+                  <div {{action 'openModal' 'follow' 'connect'}}  class="pointer" style="width:260px;padding-bottom:0px;height:32px;border:1px solid #ddd;margin-top:10px;margin-bottom:10px;background-color:#fff;display:none"><span id="connect" style="float:left;margin-top:7px;margin-left:10px;" onclick="couch_clear('#input_profile',2)">Connect to</span><span class="icon mc-next" id="connect" style="float:right;margin-top:10px;margin-right:10px;"></span></div>
+                  <div class="input-group" style="width:260px;padding-bottom:0px;height:32px;border-bottom:0;margin-top:10px">
+                    <input id="p_phone" type="text" class="form-control grey" style="height:32px;border-right-color:transparent;color:#888;border-bottom:0;" placeholder="Phone Number">
+                    <span class="input-group-addon" style="background-color:#fff;border-left-color:transparent;border-bottom:0;"><div {{action "cleared" "p_phone"}}  id="clear_phone" style="color:#ddd;cursor:pointer;padding-right:10px;border-bottom:0;" class="fa fa-times-circle"></div></span>
+                  </div>
+                  <div class="input-group" style="width:260px;padding-bottom:0px;height:32px;border-bottom:0;">
+                    <input id="p_address" type="text" class="form-control grey" style="height:32px;border-right-color:transparent;color:#888;border-bottom:0;" placeholder="City" onclick="couch_clear('#input_profile',2)">
+                    <span class="input-group-addon" style="background-color:#fff;border-left-color:transparent;border-bottom:0;"><div {{action "cleared" "p_address"}}  id="clear_address" style="color:#ddd;cursor:pointer;padding-right:10px;border-bottom:0;" class="fa fa-times-circle"></div></span>
+                  </div> -->
+                    <textarea id="p_bio" class="form-control grey" placeholder="Bio" style="margin-bottom:0px;height:80px;width:260px;;color:#888;resize:none;"></textarea>
+                    <center style="margin-top:10px;"><button {{action "update_user"}} type="button" class="btn btn-red2 12 b-red2" style="width: 124px;margin-top: 10px;margin-bottom:50px;"><i class="" id="moco-load"></i>Save</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="update">
+          {{#modal-dialog}}
+            <div class="confirm b-back" style="height:250px;">
+              <div class="head1 b-red" style="padding-top:10px;height:40px">
+                <span class="pointer dark_red" id="close" {{action "closeModal" }} style="position:absolute;top:6px;"><i class="fa fa-angle-left fa-2x"></i></span>
+                <center><span class="modal-title white">Update iNgawi</span></center>
+              </div>
+              <div>
+                <div id="content"> 
+                  <div style="padding-top:10px;">
+                    <center>
+                      <div id="logo"></div>
+                      <div id="text_">
+                        <div style="margin-bottom:10px"><img id="photo_badge" src="img/main/logo.png" style="height:88px;"></div>
+                          Update Available!
+                        <div class="black" style="font-size:16px;margin-bottom:30px;padding-bottom:5px;color:#444" id="text_update"></div>
+                      </div>
+                      <div style="position:absolute;width:100%;bottom:10px"><center><button id="btn-update" class="btn btn-default" style="background-color: #1ebe8e;color:#fff;padding:5px 30px;border-radius: 21px;border-color:transparent" >Update</button></center></div>
+                    </center>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="addnote">
+          {{#modal-dialog}}
+            <div class="modal-feeds">
+              <div class="head1 b-red" style="padding-top:10px;">
+                <span class="pointer dark_red" id="close" {{action "closeModal" }} style="position:absolute;top:6px"><i class="fa fa-angle-left fa-2x"></i></span>
+                <center><span class="modal-title white">New Memo</span></center>
+              </div>
+              <div class="col-md-12" style="width:100%;height:410px;background-color:#f4f1f1;margin-top: 25px;color:#888;">
+                <div class="animated fadeInRight" id="notes_" style="">
+                <textarea class="input textarea" id="anote_title" style="margin: 0px;height:28px;resize:none;width: 80%;background-color:transparent;border: 1px solid transparent;font-size:14px;margin-top:8px;">Note Title</textarea>
+                  <span id="chars" style="float:right;margin-top:14px;padding-right:20px;color:#888;font-size:12px;"></span>
+                </div>
+                <div id="note_content" style="position: absolute; left: 0; top: 40px;  overflow-y: auto;bottom: 50px;right: 0;"> 
+                </div>
+                <div style="position: absolute;bottom: 10px;left:0;right:0;">
+                  <center>
+                  <button id="btn-addnote" class="btn btn-default" style="background-color: #c92036;color:#fff;padding:7px 40px;width:134px;height:36px;">Save</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="syncmemo">
+          {{#modal-dialog}}
+            <div class="modal-feeds">
+              <div class="head1 b-red" style="padding-top:10px;">
+                <span class="pointer dark_red" id="close" {{action "closeModal" }} style="position:absolute;top:6px"><i class="fa fa-angle-left fa-2x"></i></span>
+                <center><span class="modal-title white">Sync to Note</span></center>
+              </div>
+              <div class="col-md-12" style="width:100%;height:410px;background-color:#f4f1f1;margin-top: 25px;color:#888;padding-left:10px;">
+                <div style="padding-top:20px;cursor:pointer;color:#c92036" {{action "openModal" "addnote"}} >New Note</div>
+                <div id="memo_content" style="position: absolute; left: 10px; top: 50px;  overflow-y: auto;bottom: 60px;right: 10px;"> 
+                </div>
+                <div style="position: absolute;bottom: 10px;left:0;right:0;">
+                  <center>
+                  <button id="btn-syntonote" disabled:disabled class="btn btn-default" style="background-color: #c92036;color:#fff;padding:7px 40px;width:134px;height:36px;">Save</button>
+                  </center>
+                </div>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" id="intro">
+          <!-- <div class="log-top blur">
+              <img id="logo-login" src="img/main/logo.png">
+              <div style="display:none"><h2 class="blur">Simple. Social. Reading.</h2></div>
+          </div> -->
+          <center style="" class="mainlogin" class="">
+            <!-- <div class="log-button">
+              <div>
+                  <button class="large radius btn-fb" {{action "fb"}}><span class="icon-circle fb "><i class="fa fa-facebook log-btn"></i></span><span class="login-text">Gunakan Akun <span>Facebook</span></span></button>
+              </div>
+              <div style="display:none">
+                  <button class="large radius btn-twit" {{action "twitter"}}><span class="icon-circle twit "><i class="fa fa-twitter log-btn"></i></span><span class="login-text">Gunakan Akun <span>Twitter</span></span></button>
+              </div>
+              <div>
+                  <button class="large radius btn-em"  {{action 'openModal' 'log-email'}}><span class="icon-circle em "><i class="fa fa-envelope log-btn"></i></span><span class="login-text">Gunakan Akun <span>Email</span></span></button>
+              </div>
+              <div>
+                <a class="pointer" href="#/main/store/index"><< Kembali ke halaman awal</a>
+              </div>
+            </div> -->
+          </center>
+          {{outlet}}
+        </script>
+        <script type="text/x-handlebars" id="intro/ha">
+          <center style="position:absolute;top:0;bottom:0;right:0;left:0;">
+            <div id="intro_screen">
+                <a href="#/intro/na">
+                  <div style="width:600px;height:300px;background-size:contain;" class="ha wow fadeInRight in_1_content_illustration" data-wow-duration="0.5s"></div>
+                  <div style="width:600px;height:100px" class="ha wow fadeInRight in_1_content_text" data-wow-duration="0.5s"></div>
+                </a>
+                <div class="dot"><a href="#/intro/ha"><i class="fa fa-circle"></i></a><a href="#/intro/na"><i class="fa fa-circle-thin"></i></a><div style="display:none"><a href="#/intro/ca"><i class="fa fa-circle-thin"></i></a><a href="#/intro/ra"><i class="fa fa-circle-thin"></i></a></div></div>
+                <button id="btn-intro" onclick="location.href='#/intro/na'" style="padding: 10px 50px">Lanjutkan</button>
+            </div>
+          </center>
+        </script>
+        <script type="text/x-handlebars" id="intro/na">
+          <center style="position:absolute;top:0;bottom:0;right:0;left:0;">
+            <div id="intro_screen">
+                <a href="#/main/store/index">
+                  <div style="width:600px;height:300px;background-size:contain;" class="ha wow fadeInRight in_2_content_illustration" data-wow-duration="0.5s"></div>
+                  <div style="width:600px;height:100px" class="ha wow fadeInRight in_2_content_text" data-wow-duration="0.5s"></div>
+                </a>
+                <div class="dot"><a href="#/intro/ha"><i class="fa fa-circle-thin"></i></a><a href="#/intro/na"><i class="fa fa-circle"></i></a><div style="display:none"><a href="#/intro/ca"><i class="fa fa-circle-thin"></i></a><a href="#/intro/ra"><i class="fa fa-circle-thin"></i></a></div></div>
+                <button id="btn-intro" onclick="location.href='#/main/store/index'" style="padding: 10px 50px">Mulai Sekarang</button>
+            </div>
+          </center>
+        </script>
+        <script type="text/x-handlebars" id="intro/ca">
+          <center style="position:absolute;top:0;bottom:0;right:0;left:0;">
+            <div id="intro_screen">
+                <a href="#/main/store/index">
+                  <div style="width:600px;height:300px" class="ha wow fadeInRight in_3_content_illustration" data-wow-duration="0.5s"></div>
+                  <div style="width:600px;height:100px" class="ha wow fadeInRight in_3_content_text" data-wow-duration="0.5s"></div>
+                </a>
+                <div class="dot"><a href="#/intro/ha"><i class="fa fa-circle-thin"></i></a><a href="#/intro/na"><i class="fa fa-circle-thin"></i></a><a href="#/intro/ca"><i class="fa fa-circle"></i></a><a href="#/intro/ra"><i class="fa fa-circle-thin"></i></a></div>
+                <button id="btn-intro" onclick="location.href='#/intro/ra'" style="padding: 10px 50px">Lanjutkan</button>
+            </div>
+          </center>
+        </script>
+        <script type="text/x-handlebars" id="intro/ra">
+          <center style="position:absolute;top:0;bottom:0;right:0;left:0;">
+            <div id="intro_screen">
+                <a href="#/main/store/index">
+                  <div style="width:600px;height:300px" class="ha wow fadeInRight in_4_content_illustration" data-wow-duration="0.5s"></div>
+                  <div style="width:600px;height:100px" class="ha wow fadeInRight in_4_content_text" data-wow-duration="0.5s"></div>
+                </a>
+                <div class="dot"><a href="#/intro/ha"><i class="fa fa-circle-thin"></i></a><a href="#/intro/na"><i class="fa fa-circle-thin"></i></a><a href="#/intro/ca"><i class="fa fa-circle-thin"></i></a><a href="#/intro/ra"><i class="fa fa-circle"></i></a></div>
+                <button id="btn-intro" onclick="location.href='#/main/store/index'" style="padding: 10px 50px">Lanjutkan</button>
+            </div>
+          </center>
+        </script>
+        <script type="text/x-handlebars" id="login">
+          <iframe style="width: 100%;height:100%;display:none;position:absolute;background-color:#fff;" id="load_iframe" nwfaketop>
+          </iframe>
+          <div id="success" style="display:none" {{action "openModal" "success"}}></div>
+          <div id="welcome" style="display:none" {{action "openModal" "welcome"}}></div>
+          <div id="failed" style="display:none" {{action "openModal" "failed"}}></div>
+          <div id="no-user" style="display:none" {{action "openModal" "no-user"}}></div>
+          <div id="register" style="display:none" {{action "openModal" "register"}}></div>
+          <div id="reg-twit" style="display:none" {{action "openModal" "reg-twit"}}></div>
+          <div id="reg" style="display:none" {{action "openModal" "register"}}></div>
+          <div id="tos" style="display:none" {{action "openModal" "tos"}}></div>
+          <div id="loading" style="display:none" {{action "openModal" "loading"}}></div>
+          <div id="btn-dialog" style="display:none" {{action "openModal" "conf_dialog"}}></div>
+          <div id="close" style="display:none" {{action "closeModal"}}></div>
+          <div id="btn-u_recommend" style="display:none" {{action "openModal" "u_recommend"}}></div>
+          <div class="mainlogin b-red4">
+            <center style="" id="login_screen">
+              <div class="log-top">
+                <div class="in_iNgawi_tagline" style="height:400px;margin-top:30px;"></div>
+                <div style="display:none"><h2 class="regular">Simple. Social. Reading.</h2></div>
+              </div>
+              <div class="log-button">
+                <div>
+                    <button class="large radius btn-fb" {{action "fb"}}><span class="icon-circle fb "><i class="fa fa-facebook log-btn"></i></span><span class="login-text">Gunakan Akun <span>Facebook</span></span></button>
+                </div>
+                <div style="display:none">
+                    <button class="large radius btn-twit" {{action "twitter"}}><span class="icon-circle twit "><i class="fa fa-twitter log-btn"></i></span><span class="login-text" style="margin-left:14px">Gunakan Akun <span>Twitter</span></span></button>
+                </div>
+                <div>
+                    <button class="large radius btn-em"  {{action 'openModal' 'log-email'}} id="login_email"><span class="icon-circle em "><i class="fa fa-envelope log-btn" style="font-size:17px;"></i></span><span class="login-text" style="margin-left:0px;">Gunakan Akun <span>Email</span></span></button>
+                </div>
+                <div>
+                  <a  class="pointer" href="#/main/store/index" style="color: #FFF"><< Kembali ke halaman awal</a>
+                </div>
+              </div>
+            </center>
+          </div>
+        </script>
+        <script type="text/x-handlebars" data-template-name="video">
+        {{#modal-dialog}}
+           <div class="modal-feeds" style="height:450px;width: 600px;">
+            <div class="head1 b-red">
+              <span class="pointer dark_red" {{action 'closeModal'}} id="close"><i class="fa fa-angle-left f20" style="display: none"></i></span>
+              <center>
+                <span class="pointer white" style="" id="feed_title">Detail Video </span>
+              </center>
+              <span class="pointer white" style="top: 10px;position: absolute;right: 10px;" {{action 'closeModal'}} ><i class="moco-cross dark_red"></i> </span>
+            </div>
+            <div class="content1" id="scroll_feeds" style="bottom:0;background-color:#fff;height:411px;text-align: center;line-height: 1.2;margin: 0px;">
+                <iframe id="video" width="600" height="411"  frameborder="0" ></iframe>
+            </div>
+          </div>
+        {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" data-template-name="help_olcm">
+          {{#modal-dialog}}
+            <div class="modal-feeds" style="height:450px;">
+              <div class="head1 b-red">
+                <span class="pointer dark_red" {{action 'closeModal'}} id="close"><i class="fa fa-angle-left f20" style="display: none"></i></span>
+                <span class="pointer white" style="padding-left:105px;" id="feed_title">Pengaturan Mode </span>
+                <span class="pointer white" style="float:right" {{action 'closeModal'}} ><i class="moco-cross"></i></span>
+              </div>
+              <div class="content1" id="scroll_feeds" style="bottom:0;background-color:#fff;height:371px;text-align: center;line-height: 1.2;margin-top: 15px;">
+                <div class="f14 medium">{{App.olcm_head}}</div>
+                <div class="f12 medium" style="font-size: 12px;">{{App.olcm_det}}</div>
+                <div class="st_device_info1" style="margin:15px;"></div>
+                <div style="font-size: 12px;padding: 5px 20px;color: #444;text-align: left">klik tombol <b>{{App.olcm_status}}</b> {{App.olcm_content}}</div>
+                <center>
+                  <button class="b_red red b-trans f12" {{action 'closeModal'}} id="act_try" style="position:absolute;left:0;right:0;margin:auto;width:150px;border-radius:5px;padding-top:7px;padding-bottom:8px;margin-top:20px;">Tidak, Terimakasih</button>
+                </center>
+              </div>
+            </div>
+          {{/modal-dialog}}
+        </script>
+        <script type="text/x-handlebars" id="main">
+          <div id="btn-help_olcm" style="display:none" {{action "openModal" "help_olcm"}}></div>
+          <div id="btn-video" style="display:none" {{action "openModal" "video"}}></div>
+          <div id="btn-check_donasi" style="display:none" {{action "openModal" "checkout_donasi"}}></div>
+          <div id="btn-conf_donasi" style="display:none" {{action "openModal" "confirmation_donasi"}}></div>
+          <div id="btn-add_donasi" style="display:none" {{action "openModal" "add_donasi"}}></div>
+          <div id="btn-empty_donasi" style="display:none" {{action "openModal" "empty_donasi"}}></div>
+          <div id="btn-tos" style="display:none" {{action "openModal" "tos"}}></div>
+          <div style="display:none" id="det-synopsis" {{action "openModal" "synopsis"}}></div>
+          <div style="display:none" id="com-feeds" {{action "openModal" "feeds"}}></div>
+          <div style="display:none" id="like_list" {{action "openModal" "like_list"}}></div>
+          <div id="btn-dialog" style="display:none" {{action "openModal" "dialog"}}></div>
+          <div id="btn-close_modal" style="display:none" {{action "closeModal"}}></div>
+          <div id="btn-confirm" style="display:none" {{action "openModal" "confirm"}}></div>
+          <div id="btn-password" style="display:none" {{action "openModal" "password"}}></div>
+          <div id="btn-success" style="display:none" {{action "openModal" "trans_success_book"}}></div>
+          <div id="success" style="display:none" {{action "openModal" "success"}}></div>
+          <div id="failed" style="display:none" {{action "openModal" "trans_failed"}}></div>
+          <div id="badge_status1" style="display:none" {{action "openModal" "newbie"}}></div>
+          <div id="badge_status2" style="display:none" {{action "openModal" "bookworm"}}></div>
+          <div id="btn-token" style="display:none" {{action "openModal" "token"}}></div>
+          <div id="btn-point" style="display:none" {{action "openModal" "point"}}></div>
+          <div id="btn-matm" style="display:none" {{action "openModal" "matm"}}></div>
+          <div id="btn-transfer" style="display:none" {{action "openModal" "transfer"}}></div>
+          <div id="btn-share" style="display:none" {{action "openModal" "share"}}></div>
+          <div id="btn-join" style="display:none" {{action "openModal" "join"}}></div>
+          <div id="btn-unix" style="display:none" {{action "openModal" "unix"}}></div>
+          <div id="btn-follow" style="display:none" {{action "openModal" "follow"}}></div>
+          <div id="btn-profile" style="display:none" {{action "openModal" "profile"}}></div>
+          <div id="btn-gift" style="display:none" {{action "openModal" "gift"}}></div>
+          <div id="btn-conf_dialog" style="display:none" {{action "openModal" "conf_dialog"}}></div>
+          <div id="btn-close" style="display:none" {{action "closeModal"}}></div>
+          <div id="btn-ads" style="display:none" {{action "openModal" "ads"}}></div>
+          <div id="btn-borrow" style="display:none" {{action "openModal" "borrow"}}></div>
+          <div id="btn-update_moco" style="display:none" {{action "openModal" "update"}}></div>
+          <div id="result" style="display:none"></div>
+          <div id="search_preload" style="display:none">
+            <div class="red2">
+              <button class="b_white b-trans white f14" style="border-radius:10px;">
+                <span class="fa fa-spin moco-load fa-2x white"></span><span style="position:relative;top:-7px;" class="white"> Pencarian Berlangsung.....</span>
+              </button>
+            </div>
+          </div>
+          <nav class="navbar navbar-main b-black no-radius white f12 olcm" role="navigation" style="margin-bottom: 0;display:none" >
+            <ul class="nav navbar-nav navbar-left pointer" onclick="help_olcm(1)">
+              <li class="st_ic_info"></li> 
+              <li style="padding: 7px;"><span id="mode-olcm">Mode Daring</span></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li style="padding: 4px;">
+                <button class="btn b-red f12" style="padding: 3px 15px" id="btn-olcm" onclick="olcm(1)">Jadikan Luring</button>
+              </li>
+            </ul>
+          </nav>
+          <nav class="navbar navbar-main b-red no-radius" role="navigation">
+            <ul class="nav navbar-nav navbar-left">
+              <li style="z-index:9">
+                <a href="#" id="logo_profile" class="dropdown-toggle na_sidebarmenu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onclick="" style="height:50px;"></a>
+              </li>
+              <li>
+                <a href="#" id="" class="dropdown-toggle nav_icon" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onclick="" {{action "home"}} style="height:40px;"></a>
+              </li>
+              <li style="margin-left:10px;">
+                <a style="padding:2px;padding-top:3px;">
+                  <div class="form-group nav_search">
+                    <input type="text" class="form-control" placeholder="Pencarian..." rel="Search" id="nav_search" style="border-radius: 15px;">
+                  </div>
+                </a>
+                <ul class="dropdown-menu nav-dropdown nav_dropdown red" role="menu" style="width:325px;padding:0;right:-11px;display:none;overflow:auto;" id="nav_search_result">
+                  <li style="padding:10px;" class="red2">
+                    <span class="fa fa-spin moco-load fa-2x red2"></span><span style="position:relative;top:-7px;" class="red2"> Pencarian Berlangsung.....</span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" id="navigasi">
+              <li>
+                <a href="#" id="icn_home" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onclick="location.href='#/main/home'" style="padding: 15px 9px;"><span class="white">Beranda</span></a>
+              </li>
+              <li>
+                <a href="#" id="icn_store" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onclick="location.href='#/main/store/index'" style="padding: 15px 9px;"><span class="white">Koleksi</span></a>
+              </li>
+              <li>
+                <a href="#" id="icn_library" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onclick="location.href='#/main/library/all'"  style="padding: 15px 9px;"><span class="white">ePustaka</span></a>
+              </li>
+              <li>
+                <a href="#" id="icn_shelf" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" onclick="" {{action "shelf"}} style="padding: 15px 9px;"><span class="white">Rak Buku</span></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle na_inactive_chat" data-toggle="dropdown" role="button" aria-expanded="false" id="logo_chat" onclick="act_clear(2)" style="height:50px;width:35px;"></span><span class="notif message" style="display:none" id="count_chat">0</span></a>
+                <ul class="dropdown-menu nav-dropdown" role="menu" style="width:325px;padding:0;right:-5px;min-height:50px;padding-top:5px;">
+                  <div id="inbox" class="nav_notif" style="display:none">
+                    <div id="list_inbox"><button class="pointer red2" style="margin:12px 6px; width:150px;height:36px;margin-top:0;border-radius:5px;margin-bottom:0px;display:none" onclick="location.href:'#/login'">Masuk</button></div>
+                    <div><center><button id="btn-loadmore_chat" class="loadmore" onclick="morechat()" style="margin-top:10px;display:none">Muat Ulang<i class="" id="icn-loadmore_chat"></i></button></center></div>
+                  </div>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle na_notificationmenu" data-toggle="dropdown" role="button" aria-expanded="false" id="logo_bell" onclick="act_clear(2)" style="height:50px;width:35px;"></span><span class="notif message" style="display:none" id="count_notif">0</span></a>
+                <ul class="dropdown-menu nav-dropdown" role="menu" style="width:325px;padding:0;right:-5px;min-height:50px;padding-top:5px;">
+                  <div id="notif" class="nav_notif" style="padding:0px;margin:0px;">
+                    <div id="list_notif"><button class="pointer red2" style="margin:12px 6px; width:150px;height:36px;margin-top:0;border-radius:5px;margin-bottom:0px;display:none" onclick="location.href:'#/login'">Masuk</button></div>
+                    <div><center><button class="loadmore" id="btn-loadmore_notif" onclick="morenotif()" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_notif"></i></button></center></div>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </nav>       
+          <div class="side-menu side-close wow fadeInLeft" data-wow-duration="2s">
+            <div class="head" style="margin-top:10px;text-align:center">
+                  <img class="photoCircle pointer" id="user_photo" src="img/main/avatar.png"  onerror="AvaError(this)">
+                  <div class="fa moco-pen_o pointer grey" style="position:absolute;right:74px;font-size:25px;margin-top:55px;display:none;background: #fff;border-radius: 50%;border:1px solid #fff;" id="open_profile"></div>
+                  <div id="name" style="margin-top:10px">User</div>
+                  <div class="identity" style="top:135px;left:5px;margin-top:20px">
+                      <div class="follow" style="height:40px;">
+                        <div class="square pointer" onclick="myfollower()" style="width:117px"><div id="follower" class="red2 f20">0</div><div class="f10">Followers</div></div>
+                        <div class="square pointer" onclick="myfollowing()" style="position:relative;left:131px"><div id="following" class="red2 f20">1</div><div class="f10">Following</div></div>
+                      </div>
+                      <button class="b_red2 red2" style="margin-top:0px;">Newbie</button>
+                  </div>
+              </div>
+              <div class="mid" style="margin-top:80px">
+                <div id="about" class="f10" style="padding:10px;line-height:1.2;margin:0">About me.</div>
+                <div id="password" {{action "openModal" "change_password" "side-menu"}} class="red2 f10 pointer" style="margin-top:10px;display:none">Ganti Sandi <span class="fa fa-angle-right"><span></div>
+                <div id="cssmenu" style="width:235px;display:none">
+                  <ul>
+                    <li class='has-sub'><a href='' style="padding-left:0;padding-bottom:0;padding-top:0"><button class="f10" id="btn-balance" style="margin:12px 6px; width:220px;height:36px;padding-right:8px;border-radius:5px;"><i class="moco-database red"></i><span style="position:relative;left:8px;">Balance </span><span class="right"><span id="balance" class="red2 f12">0</span> pts</span></button></a>
+                          <ul style="background-color:#fff;margin-right:9px;margin-left:6px;border-top:1px solid #ddd;top:-12px;" class="topup">
+                              <li class='list_topup' id="token" {{action "openModal" "token"}} style="padding:10px 0px;"><a style="color: #4D4B8C;font-size:10px;"><span><i class="moco-ic_voucher" style="position:relative;font-size:10px;left:-2px;padding-right:10px;"></i> Moco Voucher</span></a></li>
+                              <li class='list_topup' id="klickpay" onclick="topup('klickpay')" style="padding:10px 0px;"><a style="color: #4D4B8C;font-size:10px;"><span><i class="moco-ic_klikpay f12" style="padding-right:10px;"></i> Klikpay BCA</span></a></li>
+                              <li class='list_topup' id="matm" onclick="topup('matm')" style="padding:10px 0px;"><a style="color: #4D4B8C;font-size:10px;"><span><i class="moco-ic_matm f12" style="padding-right:10px;"></i> Mandiri SMS</span></a></li>
+                              <li class='list_topup' id="transfer"  {{action "openModal" "transfer"}} style="padding:10px 0px;"><a  style="color: #4D4B8C;font-size:10px;"><span><i class="moco-ic_transfer f12" style="padding-right:10px;"></i> Manual ATM Transfer</span></a></li>
+                          </ul>
+                      </li>
+                  </ul>
+                </div>
+                <button class="pointer" {{action "openModal" "recommend" "gift"}} style="margin:12px 6px; width:220px;height:36px;margin-top:0;border-radius:5px;margin-bottom:0px;display:none"><i class="moco-arrow_o red2"></i><span style="position:relative;left:8px;font-size:10px">Send points as gift</span></button>
+                <div id="cssmenu" style="width:235px;">
+                  <ul>
+                    <li class='has-sub' {{action "notes"}}><a href='' style="padding-left:0;padding-bottom:0;padding-top:0"><button class="f10 b_red2 b-trans red2" id="btn-balance" style="margin:12px 6px; width:220px;height:36px;padding-right:8px;border-radius:5px;"><i class="moco-ij_notes red2"></i><span style="position:relative;left:8px;">Catatan </span></button></a></li>
+                    <li class='has-sub'><a href='' style="padding-left:0;padding-bottom:0;padding-top:0"><button class="f10 b_red2 b-trans red2" id="btn-balance" style="margin:12px 6px; width:220px;height:36px;padding-right:8px;border-radius:5px;"><i class="moco-legal red2"></i><span style="position:relative;left:8px;">Bantuan dan Kebijakan </span></button></a>
+                          <ul style="background-color:#fff;margin-right:9px;margin-left:6px;border-top:1px solid #ddd;top:-12px;" class="topup">
+                              <li class='list_topup' id="_token" style="padding:10px 0px;"><a style="color: #4D4B8C;font-size:10px;" onclick="legal('tos')"><span> Kebijakan Lisensi</span></a></li>
+                              <li class='list_topup' id="_klickpay" onclick="legal('howto')" style="padding:10px 0px;"><a style="color: #4D4B8C;font-size:10px;"><span> Cara Penggunaan</span></a></li>
+                              <li class='list_topup' id="_matm"  onclick="legal('faq')" style="padding:10px 0px;"><a style="color: #4D4B8C;font-size:10px;"></i> Bantuan</span></a></li>
+                          </ul>
+                      </li>
+                  </ul>
+                </div>
+                <div class="divider" style="margin-top:2px;"></div>
+                <div class="activity" style="display:none">
+                  <div class="f12">Your Activities :</div>
+                  <div class="circle">
+                    <div style="display: inline; width: 50px; height: 100px;"><input value="75" class="knob second" data-min="0" data-max="100" data-bgcolor="#ddd" data-fgcolor="#c92036" data-displayinput="true" data-displayPrevious="true" data-width="60" data-height="60" data-thickness=".2" style=" width: 0px;" data-readOnly="true"></div>
+                  </div>
+                  <div class="details f10">
+                    <div>Reading activities</div>
+                    <div>this week</div>
+                    <div class="detil"><span class=""><i class="fa fa-circle red"></i> Your activities 75%</span><div class="f8">12 hours</div></div>
+                    <div class="detil"><span class=""><i class="fa fa-circle black"></i> 25% the rest</span><div class="f8">4 hours</div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="f10" style="padding:10px;display:none">Riwayat Peminjaman</div>
+              <div id="purchase" class="f10" style="width:230px;height:265px;overflow:auto;display:none"></div>
+              <div class="foot b-red2 white pointer" {{action 'logout'}} style="display:none" id="logout">
+                  <span class="moco-out"></span> Keluar
+              </div>
+          </div>
+          <div class="main-overlay" style="display:none">
+          </div>
+          <div class="main">
+            {{outlet}}
+            <div class="dropdown" id="cat_store" style="z-index:3;float:right;margin:8px;margin-right:20px;position:fixed;right:0;display:none;margin-top:0px">
+              <a href="#" class="dropdown-toggle red2" data-toggle="dropdown" role="button" aria-expanded="false" id="" style="font-size:30px;">...</a>
+              <ul class="dropdown-menu nav-dropdown" role="menu" style="width:400px;left:-364px;top:28px;font-size:12px;overflow: auto">
+                <div id='cssmenu' style="width:350px;">
+                  <ul id="_genre_book">
+                    <li class="cat" id="all"><a href='#/main/store/index'><span>Semua</span></a></li>
+                  </ul>
+                  <ul id="genre_book">
+                  </ul>
+              </div>
+              </ul>
+            </div>
+            <div class="dropdown" id="cat_lib" style="z-index:3;float:right;margin:8px;margin-right:20px;position:fixed;right:0;display:none;margin-top:0px">
+              <a href="#" class="dropdown-toggle red2" data-toggle="dropdown" role="button" aria-expanded="false" id="" style="font-size:30px;">...</a>
+              <ul class="dropdown-menu nav-dropdown" role="menu" style="width:400px;left:-364px;top:28px;font-size:12px;overflow: auto">
+                <div id='cssmenu' style="width:350px;">
+                  <ul id="_cat_pustaka">
+                    <li class=""><a href='#/main/library/all'><span>Semua</span></a></li>
+                  </ul>
+                  <ul id="cat_pustaka">
+                  </ul>
+              </div>
+              </ul>
+            </div>
+            <div style="width:100%;height:40px;border-top:1px solid #ddd;position:fixed;text-align:center;bottom:0;z-index:4;padding-top:8px;background-color:#fff;display:none">
+              <!-- <div class="aaa" style="width:802px;margin:0 auto" id="navigasi">
+                <span id="icn_store" class="pointer" onclick="location.href='#/main/store/index'"><i class="moco-ij_store f18"></i></span>
+                <span id="icn_library"  class="pointer" onclick="location.href='#/main/library/all'"><i class="moco-ij_epustaka f18"></i></span>
+                <span class="pointer" id="icn_home" {{action "home"}}><i class="moco-ij_home f21"></i></span>
+                <span id="icn_shelf"  class="pointer" {{action "shelf"}}><i class="moco-ij_shelf f18"></i></span>
+                <span id="icn_note" class="pointer" {{action "notes"}}><i class="moco-ij_notes f18"></i></span>
+                <span id="icn_search" class="pointer" onclick="location.href='#/main/search'"><i class="moco-ij_search f18"></i></span>
+              </div> -->
+            </div>
+          </div>
+        </script>
+        <script type="text/x-handlebars" id="search">
+          <div style="width:100%;height:100%;text-align:center;padding-top:20px;">
+            <div style="width:645px;border-top-right-radius:10px;border-top-left-radius:10px;padding:10px;border:1px solid #ddd;height:100%;margin:0 auto;background-color:#fff;padding-top:4px;">
+              <div>
+                <div class="wow fadeInRight search-navbar" data-wow-duration="1s" style="display:none">
+                  <div class="form-group search">
+                    <input type="text" class="form-control" placeholder="Spootlight Search" rel="Search" id="query_search" style="border-radius:5px;">
+                  </div>
+                </div>
+                <!--<button class="b-trans f14" style="position:absolute;right:-74px;top:0px;" onclick="goBackSearch()">cancel</button>-->
+              </div>
+              <div class="btn-group btn-group-justified" style="margin-top:10px;">
+                <div id="r_collection" class="btn-group">
+                  <button id="show_collection" type="button" class="btn btn-default  r_nav" onclick="search('collection')" style="border-color:#4D4B8C;background-color:#4D4B8C;color:#fff">Koleksi</button>
+                </div>
+                <div id="r_people" class="btn-group">
+                  <button id="show_people" type="button" class="btn btn-default  r_nav" onclick="search('people')" style="border-color:#4D4B8C;background-color:#fff;color:#4D4B8C;border-left:0;border-right:0">Pengguna</button>
+                </div>
+                <div id="r_pustaka" class="btn-group">
+                  <button id="show_pustaka" type="button" class="btn btn-default r_nav" onclick="search('pustaka')" style="border-color:#4D4B8C;background-color:#fff;color:#4D4B8C">ePustaka</button>
+                </div>
+              </div>
+              <!--<ul class="nav nav-justified" id="nav_search">
+                <li class="search active" id="collection" onclick="search('collection')"><a class="pointer">Koleksi</a></li>
+                <li class="search" id="people" onclick="search('people')"><a class="pointer">User</a></li>
+                <li class="search" id="pustaka" onclick="search('pustaka')"><a class="pointer">ePustaka</a></li>-->
+              </ul>
+              <div class="list" style="top:75px;width:622px;right:auto;left:auto;text-align:left">
+                <div class="" id="list_collection"></div>
+                <div class="" id="list_people" style="display:none"></div>
+                <div class="" id="list_pustaka" style="display:none"></div>
+                <div>
+                  <center>
+                    <div id="search_more" class="fa fa-spin" style="font-size:30px;margin-top:20px;"></div>
+                  </center>
+                </div>
+                <div id="act_more_search"><center><button id="btn-loadmore_store" class="loadmore" style="margin-top:10px">Tampilkan Lebih Banyak<i class="" id="icn-loadmore_store"></i></button></center>
+                </div>
+              </div>
+            </div>
+          </div>
+        </script>
+        <script type="text/x-handlebars" id="main/home">
+          <div class="home" style="z-index:2">
+            <div id="home_timeline">
+              <div class="timeline" id="timeline"></div>
+              <div><center><div id="load_more_" class="fa fa-spin" style="font-size:30px;margin-top:20px;"></div></center></div>
+              <div><center><button id="btn-loadmore_feeds" class="loadmore" onclick="feed_morefeeds()" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_feeds"></i></button></center></div>
+            </div>
+          </div>
+          <div id="timeline_right" style="position:absolute;left:0;right:0;margin:0 auto;height:100%;">
+            <div style="height:250px;right:20px;background-color:#fff;width:240px;position:absolute;top:20px;padding-left:17px;padding-right:17px;border-radius:5px;z-index:3">
+              <div class="f14" style="padding-top:10px;padding-bottom:10px;">Saran Pertemanan<span class="pointer moco-reload red2" style="position:absolute;font-size:14px;right:17px;top:13px;" {{action "suggest"}}></span></div>
+              <div class="divider b_red2"></div>
+              <div id="suggest" style=""></div>
+            </div>
+            <div style="height:280px;right:20px;background-color:#fff;width:240px;position:absolute;top:285px;padding-left:17px;padding-right:17px;border-radius:5px;z-index:3">
+              <div class="">
+                <form>
+                  <div class="search_ red2">
+                    <input type="text" class="" placeholder="Pencarian Pengguna" rel="Search" id="user_chat" style="width:100%;padding:5px">
+                  </div>
+                </form>
+              </div>
+              <div class="divider b_red2"></div>
+              <div id="online" style="height:240px;pusition:absolute;overflow:auto;"></div>
+            </div>
+          </div>
+        </script>
+        <script type="text/x-handlebars" id="library">
+          <div class="store">
+            <!--<section id="dg-container" class="dg-container">
+            <div class="dg-wrapper">
+            </div>
+            <nav style="display:none"> 
+              <span class="dg-prev">&lt;</span>
+              <span class="dg-next">&gt;</span>
+            </nav>
+            </section>-->
+            <div id="kategori" class="red2"></div>
+            <div class="collection" id="collection" style="margin-top:50px;">library</div>
+            <div><center><div id="load_more_" class="fa fa-spin" style="font-size:30px;margin-top:20px;"></div></center></div>
+            <div><center><button id="btn-loadmore_library" class="loadmore" onclick="" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_library"></i></button></center></div>
+          </div>
+        </script>
+        <script type="text/x-handlebars" id="store">
+          <div class="store">
+            <!--<section id="dg-container" class="dg-container">
+            <div class="dg-wrapper">
+            </div>
+            <nav style="display:none"> 
+              <span class="dg-prev">&lt;</span>
+              <span class="dg-next">&gt;</span>
+            </nav>
+            </section>-->
+          <div id="kategori" class="red2"></div>
+            <div class="collection" id="collection" style="margin-top:30px;"></div>
+            <div><center><div id="load_more_" class="fa fa-spin" style="font-size:30px;margin-top:20px;"></div></center></div>
+            <div><center><button id="btn-loadmore_store" class="loadmore" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_store"></i></button></center></div>
+          </div>
+        </script>
+        <script type="text/x-handlebars" id="book">
+          <div id="close" style="display:none" {{action 'closeModal'}}></div>
+          <div style="display:none" id="com-follow" {{action "openModal" "follow"}}></div>
+          <div style="display:none" id="get-books" {{action "openModal" "get-books"}}></div>
+          <div style="display:none" id="btn-recommend" {{action "openModal" "recommend"}}></div>
+          <div style="display:none" id="btn-rec_user" {{action "openModal" "rec_user"}}></div>
+          <div class="book">
+            <div class="b_left" style="width:250px;border-right:2px solid #ddd;padding: 0px 20px;">
+              <div class="head" style="width: 250px;height: 40px;padding: 5px 22px;left: 0px;border-bottom: 1px solid #ddd;border-right: 2px solid #ddd;padding-bottom: 5px;">
+                <center>
+                  <span onclick="goBack()" class="fa fa-angle-left f25" style="float:left;cursor:pointer;padding-top: 2px;"></span>
+                  <span class="" style="position:relative;top:5px">Detail Buku</span>
+                  <!--<span class="moco-arrow_ fa-1x5" style="float:right"></span>-->
+                  <div class="dropdown" style="float:right">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style="border-color:transparent;color:#888;background-color:transparent;padding:0;padding-top:7px;font-size:14px;"><span class="moco-arrow_" style="float:right"></span></button>
+                    <ul class="dropdown-menu" id="dropdown-share" role="menu" aria-labelledby="dropdownMenu1">
+                      <li style="padding-left: 5px;" id="dropdown_recommend"><a style="cursor:pointer;padding:5px;" onclick="recommend('recommend')" id="recommend"><span class="moco-star" style="padding-right:15px;color:#ffcd44"></span><span class="">Rekomendasi</span></a></li>
+                      <li style="border-bottom:1px solid #ddd" id="border_recommend"></li>
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="facebook1"><span class="fa fa-facebook" style="width:30px;color:#4b62ba"></span><span class="">Facebook</span></a></li>
+                      <li style="border-bottom:1px solid #ddd"></li>
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="twitter1"><span class="fa fa-twitter blue" style="width:30px; color:#1DA1F2"></span><span class="">Twitter</span></a></li>
+                      <li style="border-bottom:1px solid #ddd"></li>
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="google1"><span class="fa fa-google-plus red" style="width:30px; color:#d34836"></span><span class="">Google +</span></a></li>
+                      <li style="border-bottom:1px solid #ddd"></li>
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="linkedin1"><span class="fa fa-linkedin blue" style="width:30px; color:#007bb5"></span><span class="">Linked In</span></a></li>
+                      <li style="border-bottom:1px solid #ddd"></li>
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="email1"><span class="fa fa-envelope-o green" style="padding-right:15px;line-height:1;font-size:12px;color:#4D4B8C"></span><span class="">Email</span></a></li>
+                    </ul>
+                  </div>
+                </center>
+              </div>
+              <div class="content">
+                <div class="cover" id="cov_badge" style="position:relative;">
+                  <img class="shadow1" src="assets/img/placeholder/ic_buku_placeholder.png" id="book_cov" onerror="CovError(this)">
+                  <div class="caption shelf_back hide b_det_download" style="bottom:0px;"></div>
+                  <!-- <div class="caption" style="height:10px;width:208px;position:absolute;margin-top:-10px;"></div> -->
+                  <iframe id="audio_play" width="208" height="50" border="0" scrolling="no" frameBorder="0" style="position: absolute;left: 0px;bottom: 0px;"></iframe>
+                </div>
+<!--                 <div class="ket1 b-red" id="badge_donasi" style="height: 35px;width: 220px;position: relative;margin-top: 0px;left: -6px;padding: 10px 15px;font-size: 12px;margin-bottom: 0;display: none">
+                  <i class="fa fa-star white"></i>
+                  <span class="white" style="padding: 0px 5px">Buku ini didonasikan oleh</span>
+                  <i class="fa fa-star white"></i>
+                </div>
+                <div class="ket1 b-red" id="user_donatur" style="text-align:center;margin-top:0px;display: none;margin-bottom: 0;">
+                    <div id="list_user_donasi" class=""></div>
+                    <button class="f11 white b-trans" id="more_donatur" style="height: 25px;margin: 0;padding: 5px;">Tampilkan lebih banyak</button>
+                </div> -->
+                <div class="ket1 col-md-12 col-xs-12" style="text-align:center;margin-top:15px;height:45px;border-bottom: 1px solid #ddd;margin-bottom: 0;">
+                  <div class="col-xs-6 col-md-6 p0" style="border-right:1px solid #bbb">
+                    <div class="f10">Jumlah Salinan</div>
+                    <div class="f16 red" id="copy">0 Salinan</div>
+                  </div>
+                  <div class="col-xs-6 col-md-6 p0">
+                    <div class="f10">Besaran File</div>
+                    <div class="f16 red" id="size">0 MB</div>
+                  </div>
+                </div>
+                <div class="ket1 col-xs-12 col-md-12 p0" style="line-height:20px;margin-top: 0px;position: relative;">
+                  <span id="b_collapse" onclick="b_open(true)" class="fa fa-angle-down f25 pointer" style="position: absolute; right: 0px;top: 5px;"></span>
+                  <div class="f14" id="title_" style="margin-top:10px;margin-right: 22px"></div>
+                  <div class="publisher f12"><!--<b>Author</b>--> <span id="pengarang" class="blue">-</span></div>
+                  <div class="divider" style="padding-top:10px"></div>
+                </div>
+                <div id="book_det" style="display: none;">
+                  <table style="margin-top:10px;line-height:1.4">
+                    <tr class="f12">
+                      <td style="width:65px">Kategori</td>
+                      <td style="width:10px;"> : </td>
+                      <td><span id="genre_buku">-</span></td>
+                    </tr>
+                    <tr class="f12">
+                      <td>Penerbit</td>
+                      <td> : </td>
+                      <td><span id="penerbit">-</span></td>
+                    </tr>
+                    <tr class="f12">
+                      <td>Tahun</td>
+                      <td> : </td>
+                      <td><span id="year">-</span></td>
+                    </tr>
+                    <tr class="f12">
+                      <td>ISBN</td>
+                      <td> : </td>
+                      <td><span id="isbn">-</span></td>
+                    </tr>
+                  </table>
+                  <!--<div class="publisher f12"><b>Pengarang</b> <span id="pengarang" class="blue">-</span></div>
+                  <div class="publisher f12"><b>Kategori Buku</b> <span id="genre_buku">-</span></div>
+                  <div class="publisher f12"><b>Penerbit</b> <span id="penerbit">-</span></div>
+                  <div class="publisher f12"><b>Tahun Terbit</b> <span id="tahun">-</span></div>
+                  <div class="publisher f12"><b>ISBN</b> <span id="isbn">-</span></div>-->
+
+
+                  <!-- tambah starring dan statistik -->
+                  <div class="divider" style="padding-top:10px"></div>
+                  <div class="ket1" style="text-align:center">
+                    <div id="rating_star" style="height:15px;"><span class="name_rate" style="display: none">Rating</span> <div class="basic" data-average="4" data-id="1" style="background-color:#f4f1f1;left:62px;"></div><span id="rate" style="display: none">4</span></div>
+                  </div>
+                  <div class="ket2" style="margin-top:20px;">
+                    <div class="col-md-6 col-xs-6 center">
+                      <div class="box pointer" style="padding-top:15px;padding-bottom:15px">
+                        <div class="red f20" id="reads">0</div>
+                        <div class="f10 black">Pinjam</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6 center">
+                      <div class="box pointer" style="padding-top:15px;padding-bottom:15px">
+                        <div class="red f20" id="queue">0</div>
+                        <div class="f10 black">Antrian</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <div class="col-xs-12 col-md-12 no-padding">
+                    
+                  </div>
+                  <div class="col-xs-12 col-md-12 no-padding">
+                    
+                  </div>
+                </div>
+                <button id="get_books" style="margin-top:5px;"><span class="moco-book_arrow" style="position:relative;top:1px;font-size:11px;"></span> Pinjam Buku</button>
+                <button id="don_books" style="margin-top:5px;display:none"><span class="don-act_donasi" style="position:relative;top:1px;font-size:11px;"></span> Donasi Buku</button>
+                <!--<div style="text-align:center;margin-top:10px;height:30px;margin-bottom:10px;" id="get_books"><div  class="b-red white pointer" style="height:100%;padding-top:8px;font-size:10px;"><span class="moco-book_arrow" style="position:relative;top:2px;"></span> Get Book</div></div>-->
+                <!--<div class="ket3">
+                  <div style="padding-bottom:5px;">Sinopsis</div>
+                  <div><span class="desc f10" id="synopsis"></span><span class="blue f10 pointer" id="read_more" style="display:none">Baca lebih lajut >> </span></div>
+                </div>-->
+              </div>
+            </div>
+            <div class="b_right" style="left:250px;width:250px;border-right:2px solid #ddd;overflow-x:hidden;background-color:#fff">
+              <!-- <div class="ket1" style="text-align:center">
+                <div id="rating_star" style="height:15px;"><span class="name_rate">Rating</span> <div class="basic" data-average="4" data-id="1" style="background-color:#f4f1f1;left:70px;"></div><span id="rate">4</span></div>
+              </div>
+              <div class="ket2" style="margin-top:40px;">
+                <div class="col-md-6 col-xs-6 center">
+                  <div class="box pointer" style="padding-top:15px;padding-bottom:15px">
+                    <div class="red f20" id="reads">0</div>
+                    <div class="f10 black">Pinjam</div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xs-6 center">
+                  <div class="box pointer" style="padding-top:15px;padding-bottom:15px">
+                    <div class="red f20" id="queue">0</div>
+                    <div class="f10 black">Antrian</div>
+                  </div>
+                </div>
+              </div> -->
+              <div class="ket3" style="margin-bottom:10px;">
+                <div>Sinopsis</div>
+                <div class="divider p10"></div>
+                <div><span class="desc f10" id="synopsis" style="height:68px;"></span><span class="red f10 pointer" id="read_more" style="display:none">Baca lebih lajut >> </span></div>
+              </div>
+              <div>Ulasan Buku <span class="black" id="tot_review">(0)</span></div>
+              <div class="divider p10"></div>
+              <div class="" id="review" style="top:155px;">
+                <div id="list_review"></div>
+                <div><center><button id="btn-loadmore_review" class="loadmore" onclick="morereview()" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_review"></i></button></center></div>
+              </div>
+              <div class="footer" style="background-color:#eaeaea">
+                <div class="col-md-10 col-xs-10" style="padding-right:10px"><input type="text" id="reviews-input" placeholder="Tulis pesan" style="background:#fff"></div>
+                <div class="col-md-2 col-xs-2" style="padding-left:0"><button class="b-trans black f14" id="btn-review" style="padding-left:0px;">Kirim</button></div>
+              </div>
+            </div>
+            <div class="b_right b-red" style="left:500px;background-color:#fff">
+              <div class="tail">
+                <div>Buku Rekomendasi</div>
+                <div class="divider p10"></div>
+                <div id="suggested">
+                  <div class="col-md-3 col-xs-3 pad5"><img src="assets/img/placeholder/ic_buku_placeholder.png" style="width:100%"></div>
+                  <div class="col-md-3 col-xs-3 pad5"><img src="assets/img/placeholder/ic_buku_placeholder.png" style="width:100%"></div>
+                  <div class="col-md-3 col-xs-3 pad5"><img src="assets/img/placeholder/ic_buku_placeholder.png" style="width:100%"></div>
+                  <div class="col-md-3 col-xs-3 pad5"><img src="assets/img/placeholder/ic_buku_placeholder.png" style="width:100%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </script>
+        <script type="text/x-handlebars" id="epustaka">
+          <div style="display:none" id="det-epustaka" {{action "openModal" "synopsis" "epustaka"}}></div>
+          <div class="book">
+            <div class="b_left" style="border-right:2px solid #ddd">
+              <div class="head">
+                <center>
+                  <span onclick="goBack()" class="fa fa-angle-left fa-2x" style="float:left;cursor:pointer"></span>
+                  <span class="" style="position:relative;top:5px">Detail ePustaka</span>
+                  <div class="dropdown" style="float:right">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style="border-color:transparent;color:#888;background-color:transparent;padding:0;padding-top:7px;font-size:14px;"><span class="moco-arrow_" style="float:right"></span></button>
+                    <ul class="dropdown-menu" id="dropdown-share" role="menu" aria-labelledby="dropdownMenu1">
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="facebook1"><span class="fa fa-facebook" style="width:30px;color:#4b62ba"></span><span class="">Facebook</span></a></li>
+                      <li style="border-bottom:1px solid #ddd"></li>
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="twitter1"><span class="fa fa-twitter" style="width:30px; color:#1DA1F2"></span><span class="">Twitter</span></a></li>
+                      <li style="border-bottom:1px solid #ddd"></li>
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="google1"><span class="fa fa-google-plus" style="width:30px;color:#d34836"></span><span class="">Google +</span></a></li>
+                      <li style="border-bottom:1px solid #ddd"></li>
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="linkedin1"><span class="fa fa-linkedin" style="width:30px; color:#007bb5"></span><span class="">Linked In</span></a></li>
+                      <li style="border-bottom:1px solid #ddd"></li>
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="email1"><span class="fa fa-envelope-o green" style="padding-right:15px;line-height:1;font-size:12px;color:#4D4B8C"></span><span class="">Email</span></a></li>
+                    </ul>
+                  </div>
+                </center>
+              </div>
+              <div class="content">
+                <div class="cover">
+                  <img src="img/main/bg_pustaka.png">
+                </div>
+                <div class="ket1" style="text-align:center;margin-top:15px;">
+                  <div class="col-xs-6 col-md-6" style="border-right:1px solid #bbb;height:45px;padding:0;">
+                    <div class="f10">Jumlah Koleksi</div>
+                    <div class="f16 red" id="tot_collection" style="margin-top:5px;">0 Salinan</div>
+                  </div>
+                  <div class="col-xs-6 col-md-6" style="height:45px;padding:0">
+                    <div class="f10">Jumlah Salinan</div>
+                    <div class="f16 red" id="copy" style="margin-top:5px;">0</div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-xs-12 ket1" style="margin-bottom:0px;padding:0px;padding-bottom:15px;display:none">
+                  <div class="col-md-8 col-xs-8 no-padding">
+                    <div class="author"></div>
+                  </div>
+                  <div class="col-md-4 col-xs-4 no-padding">
+                    <div class="point red" style="visibility:hidden"><span id="point">0</span> <span class="f12">Poin</span></div>
+                  </div>
+                </div>
+                <div class="ket3" style="margin-top:40px;">
+                  <div class="f12 black">Tentang <span class="red" id="pustaka_name"></span></div>
+                  <div style="padding-top:5px;"><span class="desc f10" id="synopsis"></span><span class="blue f10 pointer" id="read_more" style="display:none">Baca lebih lajut >> </span></div>
+                </div>
+                <div class="ket2" style="margin-top:20px;">
+                  <div class="col-md-4 col-xs-4 center" id="pustaka_follow_">
+                    <div class="box pointer" id="pustaka_follow">
+                      <div class="red" id="want">0</div>
+                      <div class="f8 black">Follower</div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-xs-4 center" id="act_follow_">
+                    <div class="box b-blue pointer" id="btn-actfollow" style="border:1px solid #4D4B8C">
+                      <div class="moco-suggest white"></div>
+                      <div class="f8 white" id="follow_acttext" style="padding-top:4px;">Follow</div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-xs-4 center" id="join_pustaka_">
+                    <div class="box b-red pointer" id="join_pustaka">
+                      <div class="fa fa-plus white" id="join_check"></div>
+                      <div class="f8 white" id="join_text">Gabung Pustaka</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--<div class="tail" style="padding-bottom:35px;padding-top:0px;">
+                <div id="review_stack" style="padding-top:10px;padding-bottom:10px;border-bottom:1px solid #ddd;background-color:#fff">
+                  <div class="f12">Ulasan ePustaka <span class="black" id="tot_review">(0)</span></div>
+                </div>
+                <div class="" id="review">
+                  <div id="list_review"></div>
+                  <div><center><button id="btn-loadmore_comment" class="loadmore" onclick="morecomment('pustaka')" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_comment"></i></button></center></div>
+                </div>
+                <div class="footer" style="position:fixed;bottom:0;width:228px;">
+                  <div class="col-md-9 col-xs-9"><input type="text" id="reviews-input" placeholder="Tulis pesan"></div>
+                  <div class="col-md-3 col-xs-3"><button class="b-trans black f12" id="btn-review">Kirim</button></div>
+                </div>
+              </div>-->
+            </div>
+            <div class="b_right" style="left:230px;width:250px;border-right:2px solid #ddd;overflow-x:hidden">
+              <div>Ulasan <span class="black" id="tot_review">(0)</span></div>
+              <div class="divider p10"></div>
+              <div class="" id="review">
+                <div id="list_review"></div>
+                <div><center><button id="btn-loadmore_comment" class="loadmore" onclick="morecomment('pustaka')" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_comment"></i></button></center></div>
+              </div>
+              <div class="footer" style="background-color:#fafafa">
+                <div class="col-md-10 col-xs-10" style="padding-right:10px"><input type="text" id="reviews-input" placeholder="Tulis pesan" ></div>
+                <div class="col-md-2 col-xs-2" style="padding-left:0"><button class="b-trans blue f14" id="btn-review" style="padding-left:0px;">Kirim</button></div>
+              </div>
+            </div>
+            <div class="b_right"  style="left:480px">
+              <div class="pointer" onclick="open_pustaka(1)" >Cari Koleksi... <!--<span class="black" id="tot_collection">(0)</span>--><a id="actpustaka_search" style="top:8px;position:absolute;right:22px;color:#888" class="pointer" onclick="open_pustaka(1)"><span class="fa fa-search black poin" style=""></span></a></div>
+              <div class="p10" style="border-bottom:1px solid #ddd;"></div>
+              <div class="" id="collection" style="padding-left:2px;">
+                <div class="" id="list_collection"></div>
+                <div><center><button id="btn-loadmore_col" class="loadmore" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_col"></i></button></center></div>
+              </div>
+            </div>
+            <div class="b_right" id="result_icon" style="left:100%;height:35px;padding-top:5px;padding-bottom:0;z-index:3">
+              <form class="navbar-left">
+                <div class="log-input search_p" style="right:60px;position:absolute;left:10px;background-color:transparent;margin-top:0px;">
+                  <input type="text" style="background-color:transparent;" class="form-control" placeholder="Pencarian" rel="Search" id="query_psearch">
+                </div>
+              </form>
+              <button class="b-trans f14" style="position:absolute;right:0px;top:0px;padding-top:9px; color:#888" onclick="open_pustaka()">Batalkan</button>
+            </div>
+            <div class="b_right" style="top:0px;display:none;z-index:2;left:480px;" id="result_search">
+              <div class="" id="collection">
+                <div class="" id="search_collection"></div>
+                <div><center><button id="btn-loadmore_search" class="loadmore" style="margin-top:10px;display:none">Muat Ulang<i class="" id="icn-loadmore_search"></i></button></center></div>
+              </div>
+            </div>
+          </div>
+        </script>
+        <script type="text/x-handlebars" id="author">
+          <div class="book">
+            <div class="b_left">
+              <div class="head">
+                <center>
+                  <span onclick="goBack()" class="fa fa-angle-left fa-2x" style="float:left;cursor:pointer"></span>
+                  <span class="" style="position:relative;top:5px">Profil Penulis</span>
+                  <div class="dropdown" style="float:right">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style="border-color:transparent;color:#888;background-color:transparent;padding:0;padding-top:5px;font-size:14px;"><span class="moco-arrow_" style="float:right"></span></button>
+                    <ul class="dropdown-menu" id="dropdown-share" role="menu" aria-labelledby="dropdownMenu1">
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="facebook"><span class="fa fa-facebook" style="width:30px;color:#4b62ba"></span><span class="">Facebook</span></a></li>
+                      <li style="border-bottom:1px solid #ddd"></li>
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="twitter"><span class="fa fa-twitter blue" style="width:30px;"></span><span class="">Twitter</span></a></li>
+                      <li style="border-bottom:1px solid #ddd"></li>
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="google"><span class="fa fa-google-plus red" style="width:30px;"></span><span class="">Google +</span></a></li>
+                      <li style="border-bottom:1px solid #ddd"></li>
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="linkedin"><span class="fa fa-linkedin blue" style="width:30px;"></span><span class="">Linked In</span></a></li>
+                      <li style="border-bottom:1px solid #ddd"></li>
+                      <li style="padding-left: 5px;"><a style="cursor:pointer;padding:5px;" id="email"><span class="fa fa-envelope-o" style="padding-right:15px;line-height:1;font-size:12px;color:#4D4B8C"></span><span class="">Email</span></a></li>
+                    </ul>
+                  </div>
+                </center>
+              </div>
+              <div class="content">
+                <div class="cover">
+                  <img class="BigCircle" src="img/main/avatar.png" onerror="AvaError(this)">
+                </div>
+                <div class="ket_author" style="margin-top:15px;">
+                  <div id="author_name"></div>
+                  <div id="author_address"></div>
+                  <button class="b-trans radius grey b_grey" style="margin-top:10px;padding:8px 20px;">Penulis</button>
+                </div>
+                <div class="ket2">
+                  <div class="col-md-6 col-xs-6 center">
+                    <div class="box pointer"  id="_followers">
+                      <div class="black" id="author_followers">0</div>
+                      <div class="f8">Follower</div></div>
+                    </div>
+                  <div class="col-md-4 col-xs-4 center" style="display:none">
+                    <div class="box pointer" id="_following">
+                      <div class="black" id="author_following">0</div>
+                      <div class="f8">Following</div></div>
+                    </div>
+                  <div class="col-md-6 col-xs-6 center">
+                    <div class="box b-trans pointer" style="border:1px solid #4D4B8C" id="btn-actfollow">
+                      <div class="fa fa-plus"></div>
+                      <div class="f8" id="follow_acttext">Follow</div></div>
+                    </div>
+                </div>
+                <div class="ket3">
+                  <div>About Me</div>
+                  <div><span class="desc f10" id="synopsis"></span><span class="red f10 pointer" id="read_more" style="display:none">Baca lebih lajut >> </span></div>
+                </div>
+              </div>
+            </div>
+            <div class="b_right" style="background-color:#f4f1f1">
+              <div>
+                <div class="btn-group author-center" role="group" aria-label="...">
+                  <button type="button" id="s1" class="btn btn-author act-author" {{action "books"}}>Books</button>
+                  <button type="button" id="s2" class="btn btn-author" {{action "comment"}}>Komen</button>
+                </div>
+              </div>
+              <div class="p10"></div>
+              <div class="" id="collection">
+                <div class="" id="list_collection"></div>
+                <div><center><button id="btn-loadmore_col" class="loadmore" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_col"></i></button></center></div>
+              </div>
+              <div class="" id="review" style="display:none;bottom:0;">
+                <div id="author-comments">
+                  <div id="list_review"></div>
+                  <div><center><button id="btn-loadmore_comment" class="loadmore" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_comment"></i></button></center></div>
+                </div>
+                <div class="footer">
+                  <div class="col-md-10 col-xs-10"><input type="text" id="reviews-input" placeholder="Tulis pesan"></div>
+                  <div class="col-md-2 col-xs-2"><button class="b-trans black f14" id="btn-review">Kirim</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </script>
+        <script type="text/x-handlebars" id="user">
+          <div class="book">
+            <div class="b_left" style="padding:0px 20px;">
+              <div class="head">
+                <center>
+                  <span onclick="goBack()" class="fa fa-angle-left fa-2x" style="float:left;cursor:pointer"></span>
+                  <span class="" style="position:relative;top:5px">Profil Pengguna</span>
+                  <div class="dropdown" style="float:right;right: 10px;">
+                    <a href=""  {{action "openModal" "profile"}} id="editp_act" style="display: none;"><button class="pointer" type="button" style="border-color:transparent;color:#888;background-color:transparent;padding:0;padding-top:5px;font-size:14px;"><span class="fa fa-pencil red" style="float:right;font-size:18px;"></span></button></a>
+                  </div>
+                </center>
+              </div>
+              <div class="content">
+                <div class="cover">
+                  <img class="BigCircle" src="img/main/avatar.png" onerror="AvaError(this)">
+                </div>
+                <div class="ket_author" style="margin-top:10px;">
+                  <div id="author_name" class="blue"></div>
+                  <div id="author_address" style="display:none"></div>
+                  <button class="b-trans red b_red f12" style="width:87px;margin-top:10px;padding:5px 0px;border-radius:3px;"><img id="img_badge" style="width:10px;"><span id="name_badge"></span></button>  
+                  <button href="#/chat" id="chat_act" class="b-red white b_red f12" style="width:87px;margin-left:10px;margin-top:10px;padding:5px 0px;border-radius:3px;"><i class="moco-ij_chat white" style="width:10px;font-size:17px;position:absolute;left:18px;"></i><span style="padding-left:21px;"> Chat</span></button>   
+                </div>
+                <div class="ket2">
+                  <div class="col-md-4 col-xs-4 center own">
+                    <div class="box pointer"  id="_followers">
+                      <div class="red" id="author_followers">0</div>
+                      <div class="f8 black">Follower</div></div>
+                    </div>
+                  <div class="col-md-4 col-xs-4 center own">
+                    <div class="box pointer" id="_following">
+                      <div class="red" id="author_following">0</div>
+                      <div class="f8 black">Following</div></div>
+                    </div>
+                  <div class="col-md-4 col-xs-4 center u_gen">
+                    <div class="box b-trans pointer" style="border:1px solid #4D4B8C" id="btn-actfollow">
+                      <div class="fa fa-plus red" id="follow_icn"></div>
+                      <div class="f8 red" id="follow_acttext">Follow</div></div>
+                    </div>
+                  <div class="col-md-4 col-xs-4 center u_det" style="display: none">
+                    <div class="box  b-red pointer" {{action "openModal" "profile"}}  style="border:1px solid #4D4B8C" id="">
+                      <div class="fa fa-pencil white" id="follow_icn"></div>
+                      <div class="f8 white" id="follow_acttext">Edit</div></div>
+                    </div>
+                </div>
+                <div class="ket3">
+                  <div class="red">Tentang saya</div>
+                  <div><span class="desc f10" id="synopsis"></span><span class="red f10 pointer" id="read_more" style="display:none">Baca lebih lajut >> </span></div>
+                </div>
+              </div>
+            </div>
+            <div class="b_right" style="background-color:#f4f1f1">
+              <div>
+                <div class="btn-group author-center" role="group" aria-label="...">
+                  <button type="button" id="s1" class="u_btn btn btn-author act-author" {{action "books"}} style="width:150px;">Riwayat</button>
+                  <button type="button" id="s2" class="u_btn btn btn-author" {{action "comment"}} style="padding:3px 35px;width:150px;">Antrian</button>
+                  <button type="button" id="s3" class="u_btn btn btn-author" {{action "donasi"}} style="padding:3px 35px;width:150px;display:none">Donasi</button>
+                </div>
+              </div>
+              <div class="p10" style="position: absolute;right: 0;left: 0;top: 40px;overflow: auto;bottom: 0;">
+                <div class="u_list" id="collection" style="top:10px">
+                  <div class="" id="list_collection"></div>
+                  <div><center><button id="btn-loadmore_col" class="loadmore" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_col"></i></button></center></div>
+                </div>
+                <div class="u_list" id="review" style="display:none;bottom:0;top:10px;">
+                  <div id="author-comments">
+                    <div id="list_review"></div>
+                    <div><center><button id="btn-loadmore_comment" class="loadmore" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_comment"></i></button></center></div>
+                  </div>
+                </div>
+                <div class="u_list" id="donasi" style="display:none;bottom:0;">
+                  <div class="" id="list_donasi" data-index="1"></div>
+                  <div><center><button id="btn-loadmore_don" class="loadmore pointer" {{action "list_donasi" "true"}} style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_don"></i></button></center></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </script>
+        <script type="text/x-handlebars" id="shelf">
+        <div style="display:none" id="com-donatur" {{action "openModal" "donatur"}}></div>
+          <div class="shelf">
+            <div class="btn-group" role="group" aria-label="..." style="padding-top:3px;">
+              <button type="button" id="s1" class="btn btn-author f12" {{action "currents"}}><span class="moco-check_o2" style="display:none"></span> Pinjaman</button>
+              <button type="button" id="s2" class="btn btn-author f12" {{action "wants"}}><span class="moco-love_o" style="display:none"></span> Antrian</button>
+              <button type="button" id="s3" class="btn btn-author f12" {{action "histories"}} style="border-top-right-radius:4px;border-bottom-right-radius:4px;"><span class="moco-time" style="display:none"></span> Riwayat</button>
+              <div class="fa fa-info-circle pointer" id="shelf_remove" onclick="shelf_open()"></div>
+            </div>
+            <div class="list">
+              <div class="collection current" id="current" style="z-index:1"></div>
+              <div class="collection want" id="want" style="z-index:1"></div>
+              <div class="collection history" id="history" style="z-index:1"></div>
+            </div>
+          </div>
+        </script>
+        <script type="text/x-handlebars" id="shelf/current">
+        </script>
+        <script type="text/x-handlebars" id="shelf/want">
+        </script>
+        <script type="text/x-handlebars" id="shelf/history">
+        </script>
+        <script type="text/x-handlebars" id="notes">
+          <div class="n_left">
+            <div id="n_act" style="float:right;display:none;" class="red pad10 pointer" onclick="_del_show()">
+              <span class="moco-pen_o"></span>
+              <span id="edit"> HAPUS</span>
+            </div>
+            <div id="date"> Januari 11, 2015</div>
+            <div id="list_note"></div>
+          </div>
+          <div class="n_right">
+            <div class="head">
+              <span class="pointer red" {{action 'add'}}><i class="moco-plus_o"></i> Tambah Catatan</span>
+              <span class="pointer red" id="act_share" style="float:right"><i class="moco-share"></i> Share</span>
+            </div>
+            <div id="n_title" contenteditable="true">Judul Catatan</div>
+            <div id="n_detail" contenteditable="true"></div>
+          </div>
+        </script>
+        <script type="text/x-handlebars" id="chat">
+        <div id="btn-close_modal" style="display:none" {{action "closeModal"}}></div>
+        <div id="btn-conf_dialog" style="display:none" {{action "openModal" "conf_dialog"}}></div>
+        <div id="success" style="display:none" {{action "openModal" "success"}}></div>
+        <div id="failed" style="display:none" {{action "openModal" "trans_failed"}}></div>
+          <div class="main" style="top:0">
+            <div class="n_left" style="background-color:#fff">
+              <div style="position:fixed;width:299px;height:45px;background-color:#fff;z-index:2;top:50px;">
+                <div class="input-group" style="padding-bottom:0;margin:5px 10px;">
+                  <input type="text" style="-webkit-box-shadow: inset 0 1px 2px transparent;border-right-color:transparent;border-top-left-radius: 5px;border-bottom-left-radius: 5px;background:#fafafa" class="form-control" id="query_search" placeholder="Search....">
+                <span class="input-group-addon pointer" style="background-color:#fafafa;" id="icon-search"><i class="fa fa-search pointer" onclick="" style=""></i></span>
+                </div>
+              </div>
+              <div class="" style="position:fixed;
+              width:300px;height:45px;background-color:#fff;z-index:2;border-bottom:1px solid #ddd;border-right:1px solid #ddd">
+                <div id="n_act" style="float:right;display:none;" class="blue pad10 pointer" onclick="_del_show()">
+                  <span class="moco-pen"></span>
+                </div>
+                <div class="center" style="padding-top:10px">INBOX <span id="no_chat"></span></div>
+                <div class="black moco-cross pointer" onclick="goBack()" style="position:relative;top:-15px;left:10px;"></div>
+              </div>
+              <div id="chat_" style="top:95px;position:absolute;bottom:0;width:299px;">
+                <div id="list_chat"></div>
+                <div><center><button id="btn-loadmore_chat" class="loadmore" onclick="morechat(1)" style="margin-top:10px">Muat Ulang<i class="" id="icn-loadmore_chat"></i></button></center>
+                </div>
+              </div>
+              <div id="search_" style="display:none;top:95px;position:absolute;bottom:0;width:299px;"></div>
+            </div>
+            <div class="blue" style="position:absolute;left:300px;right:0;height:44px;background-color:#fafafa;padding-top:10px;"><div  id="chat_name" class="center">Name</div></div>
+            <div class="n_right" style="background-color:#fafafa;bottom:47px;;top:44px;border-top:1px solid #ddd">
+              <div style="position:absolute;top:0;bottom:60px;left:0;right:0;padding-top:10px;" id="chat_conv">
+                <div><center><button id="btn-loadmore_chat" class="loadmore" style="margin-top:10px;margin-bottom:10px;display:none">Muat Ulang<i class="" id="icn-loadmore_chat"></i></button></center></div>
+                <div id="det_chat" >
+                  <div style="position:absolute;top:0;bottom:50px;left:0;right:0;margin:auto;height:150px;width:150px;" id="empty">
+                    <span class="moco-balon grey" style="font-size:150px;"></span><span class="moco-moco white" style="font-size:55px;position:relative;left:-144px;top:-54px;"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="footer" style="padding-bottom:6px;position:fixed;left:300px;z-index:2;background-color:#f4f1f1;bottom:40px;">
+                <div class="input_" style="position:absolute;left:12px;right:65px;height:10px;bottom:-2px;"><input type="text" id="msg_text" placeholder="Tulis pesan" onkeypress="runScript(event)" style="background-color:#fff"></div>
+                <div class="col-md-2 col-xs-2" style="width:75px;position:absolute;right:0;top:-2px;"><button class="b-trans black f14" id="btn-review" onclick="send_chat(2)">Kirim</button></div>
+              </div>
+            </div>
+          </div>
+        </script>
+        <script type="text/x-handlebars" id="reader">
+          <div id='btn-addnote' {{action "openModal" "addnote"}}></div>
+          <a href="http://farm4.staticflickr.com/3462/4556658215_9081979bfa_o.jpg" class="complete" style="display:none;">complete image</a>
+          <div id="context-menu" style="">
+            <ul class="dropdown-menu" role="menu" id="reader_share" style="left:0px;top:10px;border-radius:7px;width:210px;padding:3px;background-color:#000;">
+              <li class="">
+                <div class="col-xs-3 col-md-3" style="padding:0;padding-left:10px;padding-top:3px;width:60px;"><a id="new_memo" style="color:#fff;cursor:pointer;" onclick="highlight_reader(6)">Memo</a></div>
+                <div class="col-xs-2 col-md-2" style="padding:0;padding-left:15px;border-left:1px solid #e8e8e8"><a onclick="share_reader(2)"><img src="img/icon/twitter-share.png" style="width:20px;cursor:pointer;padding-top:3px;padding-bottom:3px;"></a></div>
+                <div class="col-xs-2 col-md-2" style="padding:0;padding-left:10px;"><a onclick="share_reader(1)"><img src="img/icon/facebook-share.png" style="width:20px;cursor:pointer;padding-top:3px;padding-bottom:3px;"></a></div>
+                <div class="col-xs-2 col-md-2" style="padding:0;padding-left:10px;"><a onclick="share_reader(4)"><img src="img/icon/linked-share.png" style="width:20px;cursor:pointer;padding-top:3px;padding-bottom:3px;"></a></div>
+                <div class="col-xs-2 col-md-2" style="padding:0;padding-left:10px;"><a onclick="share_reader(5)"><span class="fa fa-envelope-square sidebar-text grey" style="color:#f4f1f1;width:30px;padding-top:5px;line-height:1;font-size:19px;"></span></a></div>
+              </li>
+              <!-- <li class="divider" style="padding-top:0px;"></li>
+              <li class="row">
+                <div class="col-xs-1 col-md-1"><a onclick="highlight_reader(1)"><img src="images/icon/shape-1.png" style="width:18px;"></a></div>
+                <div class="col-xs-1 col-md-1"><a onclick="highlight_reader(2)"><img src="images/icon/shape-2.png" style="width:18px;"></a></div>
+                <div class="col-xs-1 col-md-1"><a onclick="highlight_reader(3)"><img src="images/icon/shape-3.png" style="width:18px;"></a></div>
+                <div class="col-xs-1 col-md-1"><a onclick="highlight_reader(4)"><img src="images/icon/shape-4.png" style="width:18px;"></a></div>
+                <div class="col-xs-2 col-md-2"><a onclick="highlight_reader(5)"><img src="images/icon/a-shape.png" style="width:12px;"></a></div>
+                <div class="col-xs-5 col-md-5"></div>
+              </li>-->
+            </ul>
+          </div>
+          <nav class="navbar navbar-main b-white no-radius" role="navigation">
+              <div id="title_book"></div>
+              <ul class="nav navbar-nav navbar-left">
+                <li><a id="logo_profile" style="padding-top:8px;" onclick="goBackReader()"><button class="btn-back">Back</button></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="logo_bell"><span class="moco-bars grey" style=""></span></a>
+                  <ul class="dropdown-menu toc" role="menu" style="border-top-left-radius: 10px;border-top-right-radius: 10px;">
+                    <div class="btn-group btn-group-justified">
+                      <div id="r_toc" class="btn-group">
+                        <button id="show_toc" type="button" class="btn btn-default  r_nav" onclick="active_me('toc',0)" style="border-color:#4D4B8C;background-color:#4D4B8C;color:#fff">TOC</button>
+                      </div>
+                      <div id="r_bookmark" class="btn-group">
+                        <button id="show_bookmark" type="button" class="btn btn-default  r_nav" onclick="active_me('bookmark',280)" style="border-color:#4D4B8C;background-color:#fff;color:#4D4B8C;border-left:0;border-right:0">Bookmark</button>
+                      </div>
+                      <div id="r_notes" class="btn-group">
+                        <button id="show_note" type="button" class="btn btn-default r_nav" onclick="active_me('note',560)" style="border-color:#4D4B8C;background-color:#fff;color:#4D4B8C">Memo</button>
+                      </div>
+                    </div>
+                    <div style="position:relative;padding-top:10px;overflow:hidden" id="toc_display">
+                      <div class="col-md-4 col-xs-4 toc_act" id="toc_toc" style="width:280px;height:390px;overflow:auto;padding-left:0"></div>
+                      <div class="col-md-4 col-xs-4 toc_act" id="toc_bookmark" style="width:280px;height:390px;overflow:auto;display:none;padding-left:0"></div>
+                      <div class="col-md-4 col-xs-4 toc_act" id="toc_note" style="width:280px;height:390px;overflow:auto;display:none;padding-left:0"></div>
+                    </div>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a id="bookmark" onclick="action_bookmark()" class="pointer"><span class="moco-bookmark grey"></span></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="logo_bell"><span class="moco-brightness grey f14"></span></a>
+                  <ul class="dropdown-menu" role="menu" style="padding-bottom:20px;">
+                    <div class="black">Theme</div>
+                    <div class="divider" style="margin-top:10px;"></div>
+                    <div style="margin-top:15px;">
+                      <div class="col-md-4 col-xs-4 circle b-white pointer" onclick="theme_set(1)" style="color:#888">Mo<span style="position:absolute;top:0" class="moco-check_o tick_theme blue " id="theme1"></span></div>
+                      <div class="col-md-4 col-xs-4 circle b-sephia pointer" onclick="theme_set(2)" style="color:#888">Mo<span style="position:absolute;top:0;visibility:hidden" class="moco-check_o tick_theme blue " id="theme2"></span></div>
+                      <div class="col-md-4 col-xs-4 circle b-superblack white pointer" onclick="theme_set(3)">Mo<span style="position:absolute;top:0;visibility:hidden" class="moco-check_o tick_theme blue " id="theme3"></span></div>
+                    </div>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="logo_chat"><span class="moco-font grey f14"></span></a>
+                  <ul class="dropdown-menu" role="menu" style="width:300px;padding-bottom:20px;">
+                    <div style="color:#888" style="margin-bottom:10px;">Size</div>
+                    <div class="divider" style="margin-top:10px;"></div>
+                    <div>
+                      <div class="col-xs-1 col-md-1 f16 p0 black" style="margin-top:8px;">A</div>
+                      <div class="col-xs-10 col-md-10 black" style="margin-top:8px;"><input class="font-size-conf" value="15" min="15" max="25" type="range"></div>
+                      <div class="col-xs-1 col-md-1 f25 p0 black" style="margin-top:8px;">A</div>
+                    </div>
+                    <div class="black" style="margin-top:45px;">Font</div>
+                    <div class="divider" style="margin:10px;margin-bottom:0px;"></div>
+                    <div class="black" style="margin-left:10px;">
+                      <div class="r_font pointer"  onclick="font('Helvetica')">Helvetica<span style="float:right;line-height:1.8" class="moco-check_o font blue" id="font_Helvetica"></span></div>
+                      <div class="r_font pointer"  onclick="font('Montserrat')">Montserrat<span style="float:right;line-height:1.8" class="moco-check_o font blue" id="font_Montserrat"></span></div>
+                      <div class="r_font pointer" onclick="font('Georgia')">Georgia<span style="float:right;line-height:1.8" class="moco-check_o font blue" id="font_Georgia"></span></div>
+                      <div class="r_font pointer" onclick="font('Verdana')">Verdana<span style="float:right;line-height:1.8" class="moco-check_o font blue" id="font_Verdana"></span></div>
+                    </div>
+                    <div class="black" style="margin-top:15px;">Line Spacing</div>
+                    <div class="divider" style="margin:10px;margin-bottom:20px"></div>
+                    <div class="black" style="margin-top:0px;">
+                      <div class="col-md-4 col-xs-4 pointer" onclick="line_spacing('1')"><img src="img/icon/line-spacing-3.png" style="width:60px"><span class="moco-check_o tick_line blue" id='line_1' style="position:absolute;right:15px;"></span></div>
+                      <div class="col-md-4 col-xs-4 pointer" onclick="line_spacing('1.5')"><span class="moco-check_o tick_line blue" style="position:absolute;right:15px;visibility:hidden"  id='line_15'></span><img src="img/icon/line-spacing-2.png" style="width:60px"></div>
+                      <div class="col-md-4 col-xs-4 pointer" onclick="line_spacing('2')"><span class="moco-check_o tick_line blue" style="position:absolute;right:15px;visibility:hidden"  id='line_2'></span><img src="img/icon/line-spacing-1.png" style="width:60px"></div>
+                    </div>
+                  </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="reader_search"><span class="moco-search grey"></span></a>
+                  <ul class="dropdown-menu" role="menu" id="dropdown_rsearch">
+                    <form>
+                      <div class="input-group" style="padding-bottom:0;">
+                        <input type="text" class="form-control" id="query_reader" placeholder="Type your keyword, etc..." style="height:37px;border-top-width: 1px;border-bottom-width: 1px;border-left-width: 1px;padding-top: 3px;padding-bottom: 3px;border-right-width:0px;">
+                        <span class="input-group-addon" style="font-size:15px;border-top-width: 1px;border-color:#bbb;border-bottom-width: 1px;border-right-width: 1px;padding-top: 3px;padding-bottom: 3px;color:#aaa;background-color:#fff;"><i class="fa fa-search" style="margin-right:10px;"></i></span>
+                      </div>
+                    </form>
+                  </ul>
+                </li>
+              </ul>
+          </nav> 
+          <div class="read_content">
+            <div id="r_prev" class="r_arrow"><a id="r_prev_page" onclick="r_prev_page()"><img src="img/icon/previous-page-button.png" style="width: 40px;"></a></div>
+            <div id="viewer" style=""></div>
+            <div id="r_next" class="r_arrow"><a id="r_next_page"  onclick="r_next_page()"><img src="img/icon/next-page-button.png" style="width: 40px;"></a></div>
+          </div>
+          <!--Contextmenu-->
+          <ul id="menu" class="jeegoocontext cm_default" style="margin-top:30px;width:225px;height:220px;border-color:transparent;">
+            <div class="" style="width:100%;height:108%;background-color:#f4f1f1;padding:10px;">
+              <textarea class="input textarea" id="memo_desc" style="margin: 0px;height:170px;resize:none;width: 100%;background-color:transparent;border: 1px solid transparent;font-size:12px" placeholder="write description here"></textarea>
+              <div style="height:1px;border-bottom:1px solid #ddd;margin-bottom:10px;"></div>
+              <div class="col-xs-6 col-md-6" style="padding:0">
+                <button id="btn-follow" {{action "openModal" "syncmemo"}} class="btn btn-default" style="border-color:#1ebe8e;background-color:transparent;padding:0px;color:#1ebe8e;height:28px;width:90px;"><span id="follow_text" style="font-size:12px">Sync to Note<span></button>
+              </div>
+              <div class="col-xs-6 col-md-6" style="padding:0;padding-left:10px;">
+                <button id="btn-follow" {{action "openModal" "addnote"}} class="btn btn-default" style="border-color:#c92036;background-color:transparent;padding:0px;color:#c92036;height:28px;width:90px;"><span id="follow_text" style="font-size:12px">New Note<span></button>
+              </div>
+            </div>
+          </ul> 
+          <div style="visibility:hidden" id="memo" {{action "openModal" "syncmemo"}}></div>
+          <div style="visibility:hidden" id="add_note" {{action "openModal" "addnote"}}></div>
+          <div id="load_memo" style="position:absolute;visibility:hidden"><a id="load_memo" style="color:transparent;cursor:pointer;display:none" onclick="highlight_reader(6)">    </a></div>
+        </script>
+    <script src="js/config.js"></script>
+    <script src="js/libs/lib.js"></script>
+    <script src="app.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/libs/jquery-1.10.2.js"></script>
+    <script src="js/libs/handlebars-v1.3.0.js"></script>
+    <script src="js/libs/ember-1.8.1.js"></script>
+    <script src="js/libs/bootstrap.js"></script>
+    <script src="js/libs/bootstrap-number-input.js" ></script>
+    
+    <!--Other necessary scripts-->
+    <script src="js/libs/freewall.js"></script>
+    <script src="js/libs/jquery.endless-scroll.js"></script>
+    <script src="js/libs/jquery.jribbble-1.0.1.ugly.js"></script>
+    <script src="js/libs/drifolio.js"></script>
+    <script src="js/libs/wow.min.js"></script>
+    <script>new WOW().init();</script>  
+    <script src="js/libs/jquery.knob.js"></script> 
+    <script src="js/libs/jRating.jquery.js"></script>
+    <script src="js/libs/modernizr-2.7.1.min.js"></script> 
+    <script src="js/libs/jquery.gallery.js"></script>  
+    <!-- Main Ember JS-->
+    <script src="js/app.js"></script>
+    <script src="js/plugin.js"></script>
+    <!--FB OAuth-->
+    <script src="js/libs/fb.js"></script>
+
+    <script src="js/libs/bootstrap-contextmenu.js"></script>
+    <script src="js/libs/contextMenu.js"></script>
+    <script src="js/libs/jquery.zoomingbox.min.js"></script>
+    <script src="js/libs/highlight.js"></script>
+
+    <!--CONTROLLER-->
+    <script src="js/controller/login.js"></script>
+    <script src="js/controller/main.js"></script>
+    <script src="js/controller/home.js"></script>
+    <script src="js/controller/library.js"></script>
+    <script src="js/controller/shelf.js"></script>
+    <script src="js/controller/store.js"></script>
+    <script src="js/controller/books.js"></script>
+    <script src="js/controller/epustaka.js"></script>
+    <script src="js/controller/reader.js"></script>
+    <script src="js/controller/notes.js"></script>
+    <script src="js/controller/comments.js"></script>
+    <script src="js/controller/author.js"></script>
+    <script src="js/controller/user.js"></script>
+    <script src="js/controller/chat.js"></script>
+    <script src="js/controller/notif.js"></script>
+    <script src="js/controller/realtime.js"></script>
+    <script src="js/controller/follow.js"></script>
+
+    <script src="js/search.js"></script>
+
+    <!--Route Ember-->
+    <script src="js/routes.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/donasi.js"></script>
+
+    <!-- new assets -->
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/bootstrap-show-password.js"></script>
+
+    <!--Alert From Notifications-->
+    <script src="js/libs/eventsource.js"></script>
+    <script src="js/libs/jquery.noty.packaged.js"></script>
+
+    <!--Epub JS-->
+    <script src="js/libs/epub.min.js"></script> 
+
+    <!-- Hooks -->
+    <script src="js/libs/hooks.min.js"></script>  
+
+    <!-- File Storage -->
+    <script src="js/libs/fileStorage.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,684 @@
+
+/*sample
+background-image: url(images/newsletter_headline1.gif);
+background-repeat: no-repeat;*/
+
+/*epustaka*/
+.ep_follow_pustaka{
+	background-image: url(../img/epustaka/Follow_Pustaka.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.ep_followed_pustaka{
+	background-image: url(../img/epustaka/Followed_Pustaka.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.ep_joined_pustaka{
+	background-image: url(../img/epustaka/Joined_Pustaka.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+#ep_search_onpustaka{
+	background-image: url(../img/epustaka/Search_onpustaka.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+
+/*feeds*/
+.fe_Add_photo_1st{
+	background-image: url(../img/feeds/Add_Photo_1st.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.fe_blank_chat{
+	background-image: url(../img/feeds/Blank_Chat.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.fe_bookstore_1st{
+	background-image: url(../img/feeds/Bookstore_1st.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.fe_comment{
+	background-image: url(../img/feeds/Comment.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.fe_epustaka_1st{
+	background-image: url(../img/feeds/ePustaka_1st.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.fe_feeds_1st{
+	background-image: url(../img/feeds/Feeds_1st.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.fe_follow_suggest{
+	background-image: url(../img/feeds/Follow_Suggest.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.fe_just_follow{
+	background-image: url(../img/feeds/Just_Follow.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.fe_like{
+	background-image: url(../img/feeds/Like.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.fe_liked{
+	background-image: url(../img/feeds/Liked.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.fe_reload_suggestion{
+	background-image: url(../img/feeds/Reload_Suggestion.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.fe_search_chat{
+	background-image: url(../img/feeds/Search_Chat.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.fe_search_1st{
+	background-image: url(../img/feeds/Search_1st.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.fe_shelf_1st{
+	background-image: url(../img/feeds/Shelf_1st.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+/*intro*/
+.in_1_content_illustration{
+	background-image: url(../img/intro/1_Content_Illustration.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_1_content_text{
+	background-image: url(../img/intro/1_Content_Text.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_2_content_illustration{
+	background-image: url(../img/intro/2_Content_Illustration.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_2_content_text{
+	background-image: url(../img/intro/2_Content_Text.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_3_content_illustration{
+	background-image: url(../img/intro/3_Content_Illustration.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_3_content_text{
+	background-image: url(../img/intro/3_Content_Text.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_4_content_illustration{
+	background-image: url(../img/intro/4_Content_Illustration.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_4_content_text{
+	background-image: url(../img/intro/4_Content_Text.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_button_full{
+	background-image: url(../img/intro/ButtonFull.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_facebook{
+	background-image: url(../img/intro/Facebook.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_iNgawi_logo_tag_sign{
+	background-image: url(../img/intro/Kemenag_Logo_Tag_Sign.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_button{
+	background-image: url(../img/intro/Button.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_logo_perpusnas{
+	background-image: url(../img/intro/Logo_PemProv.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+    background-size: contain;
+}
+.in_mail{
+	background-image: url(../img/intro/Mail.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_persembahan{
+	background-image: url(../img/intro/Persembahan.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.in_iNgawi_tagline{
+	background-image: url(../img/intro/iNgawi_Tagline.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+
+
+/*message*/
+.me_remove_message{
+	background-image: url(../img/message/Remove_Message.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.me_search_on_message{
+	background-image: url(../img/message/Search_On_Message.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+
+/*notes*/
+.no_add_notes{
+	background-image: url(../img/notes/Add_Notes.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.no_remove_notes{
+	background-image: url(../img/notes/Remove_Notes.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.no_share_notes{
+	background-image: url(../img/notes/Share_Notes.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+
+/*profile*/
+.pr_chat_user_profile{
+	background-image: url(../img/profile/Chat_User_Profile.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.pr_follow_user_profile{
+	background-image: url(../img/profile/Follow_User_Profile.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.pr_has_follow_user_profile{
+	background-image: url(../img/profile/Has_Follow_User_Profile.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+
+/*reader*/
+.re_bookmark{
+	background-image: url(../img/reader/Bookmark.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_bookmarked{
+	background-image: url(../img/reader/Bookmarked.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_brightness{
+	background-image: url(../img/reader/Brightness.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_check-circle{
+	background-image: url(../img/reader/check-circle.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_format_text{
+	background-image: url(../img/reader/Format_Text.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_left{
+	background-image: url(../img/reader/Left.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_more_bright{
+	background-image: url(../img/reader/More_Bright.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_next{
+	background-image: url(../img/reader/Next.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_next_darker{
+	background-image: url(../img/reader/Next_Darker.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_prev{
+	background-image: url(../img/reader/Prev.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_prev_darker{
+	background-image: url(../img/reader/Prev_Darker.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_right{
+	background-image: url(../img/reader/Right.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_search_on_reader{
+	background-image: url(../img/reader/Search_On_Reader.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_small_bright{
+	background-image: url(../img/reader/Small_Bright.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_toc{
+	background-image: url(../img/reader/TOC.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_view_module{
+	background-image: url(../img/reader/View_Module.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_view_module_active{
+	background-image: url(../img/reader/View_Module_Active.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_zoom_in{
+	background-image: url(../img/reader/Zoom_In.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.re_zoom_out{
+	background-image: url(../img/reader/Zoom_Out.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+
+/*search*/
+.se_collapse_filter{
+	background-image: url(../img/search/Collapse_filter.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.se_expand_filter{
+	background-image: url(../img/search/Expand_Filter.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.se_load_icon{
+	background-image: url(../img/search/Load_Icon.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.se_load_icon_white{
+	background-image: url(../img/search/Load_Icon_White.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.se_more_result{
+	background-image: url(../img/search/More_Result.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+
+/*shelf*/
+.sh_info_inactive{
+	background-image: url(../img/shelf/Info_Inactive.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.sh_info_active{
+	background-image: url(../img/shelf/Info_Active.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.sh_trash{
+	background-image: url(../img/shelf/Trash.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+
+/*sidebar*/
+.si_badges_user{
+	background-image: url(../img/sidebar/Badges_User.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_clear_form{
+	background-image: url(../img/sidebar/Clear_Form.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_colapse_legal{
+	background-image: url(../img/sidebar/Colapse_Legal.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_comple_status{
+	background-image: url(../img/sidebar/Comple_Status.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_edit_user_sidebar{
+	background-image: url(../img/sidebar/edit_user_Sidebar.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_expand_legal{
+	background-image: url(../img/sidebar/Expand_Legal.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_legalhelp{
+	background-image: url(../img/sidebar/Legalhelp.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_logout_sidebar{
+	background-image: url(../img/sidebar/Logout_Sidebar.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_more{
+	background-image: url(../img/sidebar/More.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_next{
+	background-image: url(../img/sidebar/Next.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_notes_sidebar{
+	background-image: url(../img/sidebar/Notes_Sidebar.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_prev{
+	background-image: url(../img/sidebar/Prev.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_self_edit_user{
+	background-image: url(../img/sidebar/Self_Edit_User.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_uncomplete{
+	background-image: url(../img/sidebar/Uncomplete.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.si_uncomplete_status{
+	background-image: url(../img/sidebar/Uncomplete_status.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+
+/*store*/
+.st_active_queue{
+	background-image: url(../img/store/Active_Queue.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_collapse_detail_book{
+	background-image: url(../img/store/Collapse_Detail_Book.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_expand_detail_book{
+	background-image: url(../img/store/Expand_Detail_Book.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_facebook{
+	background-image: url(../img/store/Facebook.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_g+{
+	background-image: url(../img/store/G+.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_get_book{
+	background-image: url(../img/store/Get_Book.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_get_queue{
+	background-image: url(../img/store/Get_Queue.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_inactive_queue{
+	background-image: url(../img/store/inactive_Queue.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_loading_process{
+	background-image: url(../img/store/Loading_Process.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_mail{
+	background-image: url(../img/store/Mail.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_rated{
+	background-image: url(../img/store/Rated.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_recommend{
+	background-image: url(../img/store/Recommend.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_search_user-recommendation{
+	background-image: url(../img/store/Search_User-Recommendation.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_share_detail_book{
+	background-image: url(../img/store/Share_Detail_Book.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_toogle{
+	background-image: url(../img/store/toggle.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_twitter{
+	background-image: url(../img/store/Twitter.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_unrated{
+	background-image: url(../img/store/Unrated.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_device_info1{
+	background-image: url(../img/store/device_info1.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+    height: 180px;
+	background-size: contain;
+}
+.st_device_info2{
+	background-image: url(../img/store/device_info2.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+	height: 180px;
+	background-size: contain;
+}
+.st_ic_alert{
+	background-image: url(../img/store/ic_alert.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_ic_envelope{
+	background-image: url(../img/store/ic_envelope.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.st_ic_info{
+	background-image: url(../img/store/ic_info.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+    width: 15px;
+	height: 15px;
+	top: 9px;
+	background-size: contain;
+}
+.st_ic_lost{
+	background-image: url(../img/store/ic_lost.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+    height: 40px;
+    background-size: contain;
+}
+
+/*navigasi*/
+.na_added_suggestion{
+	background-image: url(../img/navigasi/0_added_suggestion.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_back{
+	background-image: url(../img/navigasi/0_Back.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_close{
+	background-image: url(../img/navigasi/0_Close.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_active_chat{
+	background-image: url(../img/navigasi/1_Active_Chat.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_inactive_chat{
+	background-image: url(../img/navigasi/1_inActive_Chat.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_flag{
+	background-image: url(../img/navigasi/Flag.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_follow_suggestion{
+	background-image: url(../img/navigasi/Follow_Suggestion.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_Has_follow_user_profile{
+	background-image: url(../img/navigasi/Has_Follow_User_Profile.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_launcher_hybrid{
+	background-image: url(../img/navigasi/Launcher_Hybrid.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_like{
+	background-image: url(../img/navigasi/Like.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_liked{
+	background-image: url(../img/navigasi/Liked.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_navlogo{
+	background-image: url(../img/navigasi/NavLogo.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_notificationmenu{
+	background-image: url(../img/navigasi/Notificationmenu.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_searchbox_active{
+	background-image: url(../img/navigasi/Searchbox_active.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_searchbox_inactive{
+	background-image: url(../img/navigasi/Searchbox_InactiveSearchbox_Inactive.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_sidebarmenu{
+	background-image: url(../img/navigasi/Sidebarmenu.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_user_register{
+	background-image: url(../img/navigasi/User_Register.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_user_success{
+	background-image: url(../img/navigasi/User_Success.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_user_confirmation{
+	background-image: url(../img/navigasi/User_Confirmation.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_user_confirmation_permission{
+	background-image: url(../img/navigasi/User_Confirmation_Permission.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_user_mail{
+	background-image: url(../img/navigasi/User_mail.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}
+.na_user_password{
+	background-image: url(../img/navigasi/User_Password.png);
+	background-repeat: no-repeat;
+    background-position: center; 
+}

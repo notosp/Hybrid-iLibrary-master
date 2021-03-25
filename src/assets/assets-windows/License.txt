@@ -1,0 +1,32 @@
+iNgawi License Agreement              
+
+			LICENSE AGREEMENT FOR iNgawi 
+ 
+Use of iNgawi application is contingent on your  (hereinafter "Recipient") agreement to the following terms:  
+
+1. GRANT OF LICENSE.  
+PT Woolu Aksara Maya, (WAM) grants to Recipient a limited, non-exclusive, nontransferable, royalty-free license to use one copy of the executable code of the Product software on a single CPU residing on Recipient's premises. All other rights are reserved to WAM. Recipient shall not rent, lease, sell, sublicense, assign, or otherwise transfer the Product, including any accompanying printed materials. Recipient may not reverse engineer, decompile or disassemble the Product except to the extent that this restriction is expressly prohibited by applicable law. WAM and its suppliers shall retain title and all ownership rights to the Product.  
+
+2. PRODUCT MAINTENANCE.  
+WAM is not obligated to provide maintenance or updates to Recipient for the Product. However, any maintenance or updates provided by WAM shall be covered by this Agreement.  
+
+3. DISCLAIMER OF WARRANTY.  
+Product is deemed accepted by Recipient. The PRODUCT is provided AS IS WITHOUT WARRANTY OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, PROGRESSIVE NETWORKS FURTHER DISCLAIMS ALL WARRANTIES, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. THE ENTIRE RISK ARISING OUT OF THE USE OR PERFORMANCE OF THE PRODUCT AND DOCUMENTATION REMAINS WITH RECIPIENT. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL PT WOOLU AKSARA MAYA OR ITS SUPPLIERS BE LIABLE FOR ANY CONSEQUENTIAL, INCIDENTAL, DIRECT, INDIRECT, SPECIAL, PUNITIVE, OR OTHER DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR OTHER PECUNIARY LOSS) ARISING OUT OF THIS AGREEMENT OR THE USE OF OR INABILITY TO USE THE PRODUCT, EVEN IF PT WOOLU AKSARA MAYA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. BECAUSE SOME STATES/JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO RECIPIENT.  
+
+4. GOVERNING LAW; ATTORNEYS FEES.  
+This Agreement shall be governed by the laws of the Republic Of Indonesia  and Recipient further consents to jurisdiction by the Republic Of Indonesia  district courts. If either WAM or Recipient employs attorneys to enforce  any rights arising out of or relating to this Agreement, the prevailing party  shall be entitled to recover reasonable attorneys' fees.  5. ENTIRE AGREEMENT.  This Agreement constitutes the complete and exclusive agreement between WAM and Recipient with respect to the subject matter hereof, and supersedes all prior oral or written understandings, communications or agreements not specifically incorporated herein. This Agreement may not be modified except in a writing duly signed by an authorized representative of WAM and Recipient.   Copyright (C) 2015 PT Woolu Aksara Maya 
+
+
+NWJS License Agreement              
+
+			LICENSE AGREEMENT FOR NWJS
+
+Copyright (c) 2012-2014 Intel Corp
+Copyright (c) 2012-2014 The Chromium Authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+

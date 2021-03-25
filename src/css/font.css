@@ -1,0 +1,430 @@
+@font-face {
+	font-family: 'Demi';
+	src: url('../fonts/apps/OpenSans-ExtraBold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Medium';
+	src: url('../fonts/apps/OpenSans-Bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Regular';
+	src: url('../fonts/apps/OpenSans-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Thin';
+	src: url('../fonts/apps/OpenSans-Light.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Bold';
+	src: url('../fonts/apps/OpenSans-SemiBold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'brandon_medium';
+    src: url('../fonts/apps/brandontext-medium-webfont.eot');
+    src: url('../fonts/apps/brandontext-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/apps/brandontext-medium-webfont.woff') format('woff'),
+         url('../fonts/apps/brandontext-medium-webfont.ttf') format('truetype'),
+         url('../fonts/apps/brandontext-medium-webfont.svg#brandon_textmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'brandon_regular';
+    src: url('../fonts/apps/brandontext-regular-webfont.eot');
+    src: url('../fonts/apps/brandontext-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/apps/brandontext-regular-webfont.woff') format('woff'),
+         url('../fonts/apps/brandontext-regular-webfont.ttf') format('truetype'),
+         url('../fonts/apps/brandontext-regular-webfont.svg#brandon_text_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'moco';
+	src:url('../fonts/plugin/moco.eot?-kj1ku5');
+	src:url('../fonts/plugin/moco.eot?#iefix-kj1ku5') format('embedded-opentype'),
+		url('../fonts/plugin/moco.woff?-kj1ku5') format('woff'),
+		url('../fonts/plugin/moco.ttf?-kj1ku5') format('truetype'),
+		url('../fonts/plugin/moco.svg?-kj1ku5#moco') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="moco-"], [class*=" moco-"] {
+	font-family: 'moco';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.moco-x7{
+	font-size: 0.7em;
+}
+
+.moco-ij_camera:before {
+	content: "\e802";
+}
+.moco-ij_chat:before {
+	content: "\e803";
+}
+.moco-not_found:before {
+	content: "\e801";
+}
+.moco-ij_queue:before {
+	content: "\e800";
+}
+.moco-ij_like:before {
+	content: "\e65f";
+}
+/*.moco-ij_bubble:before {
+	content: "\e660";
+}*/
+.moco-empty_comment:before {
+	content: "\e660";
+}
+.moco-ij_store:before {
+	content: "\e65e";
+}
+.moco-ij_logo:before {
+	content: "\e654";
+}
+.moco-ij_avatar:before {
+	content: "\e655";
+}
+.moco-ij_balon:before {
+	content: "\e656";
+}
+.moco-ij_bell:before {
+	content: "\e657";
+}
+.moco-ij_epustaka:before {
+	content: "\e658";
+}
+.moco-ij_home:before {
+	content: "\e659";
+}
+.moco-ij_lock:before {
+	content: "\e65a";
+}
+.moco-ij_notes:before {
+	content: "\e65b";
+}
+.moco-ij_search:before {
+	content: "\e65c";
+}
+.moco-ij_shelf:before {
+	content: "\e65d";
+}
+.moco-feeds:before {
+	content: "\e650";
+}
+.moco-camera:before {
+	content: "\e651";
+}
+.moco-reload:before {
+	content: "\e652";
+}
+.moco-legal:before {
+	content: "\e64f";
+}
+.moco-plus:before {
+	content: "\e64d";
+}
+.moco-check:before {
+	content: "\e64e";
+}
+/*.moco-empty_comment:before {
+	content: "\e64b";
+}*/
+.moco-refresh:before {
+	content: "\e64a";
+}
+.moco-menu:before {
+	content: "\e649";
+}
+.moco-ask_o2:before {
+	content: "\e644";
+}
+.moco-check_o2:before {
+	content: "\e645";
+}
+.moco-alert_o:before {
+	content: "\e646";
+}
+.moco-database_o:before {
+	content: "\e647";
+}
+.moco-love_o_:before {
+	content: "\e648";
+}
+.moco-load:before {
+	content: "\e64c";
+}
+.moco-ic_klikpay:before {
+	content: "\e63f";
+}
+.moco-ic_matm:before {
+	content: "\e640";
+}
+.moco-ic_transfer:before {
+	content: "\e641";
+}
+.moco-ic_voucher:before {
+	content: "\e642";
+}
+.moco-ic_pulsa:before {
+	content: "\e643";
+}
+.moco-ic_back2:before {
+	content: "\e639";
+}
+.moco-moco2:before {
+	/*content: "\e638";*/
+	content: "\e654";
+}
+.moco-ic_activity:before {
+	content: "\e63a";
+}
+.moco-ic_create:before {
+	content: "\e653";
+}
+.moco-ic_notes:before {
+	content: "\e63b";
+}
+.moco-ic_sendgift:before {
+	content: "\e63c";
+}
+.moco-ic_setting:before {
+	content: "\e63d";
+}
+.moco-icn_balance2:before {
+	content: "\e63e";
+}
+.moco-check_o_e:before {
+	content: "\e633";
+}
+.moco-love_o_e:before {
+	content: "\e634";
+}
+.moco-balon:before {
+	content: "\e635";
+}
+.moco-message:before {
+	content: "\e636";
+}
+.moco-lock:before {
+	content: "\e637";
+}
+.moco-addfriends:before {
+	content: "\e600";
+}
+.moco-suggest:before {
+	content: "\e601";
+}
+.moco-angel_right:before {
+	content: "\e602";
+}
+.moco-angle_left:before {
+	content: "\e603";
+}
+.moco-arrow_:before {
+	content: "\e604";
+}
+.moco-arrow_o:before {
+	content: "\e605";
+}
+.moco-ava:before {
+	content: "\e606";
+}
+.moco-badge:before {
+	content: "\e607";
+}
+.moco-bars:before {
+	content: "\e608";
+}
+.moco-bell:before {
+	content: "\e609";
+}
+.moco-book_arrow:before {
+	content: "\e60a";
+}
+.moco-book:before {
+	content: "\e60b";
+}
+.moco-bookmark:before {
+	content: "\e60c";
+}
+.moco-brightness:before {
+	content: "\e60d";
+}
+.moco-chat_double:before {
+	content: "\e60e";
+}
+.moco-chat:before {
+	content: "\e60f";
+}
+.moco-check_o:before {
+	content: "\e610";
+}
+.moco-check_tight:before {
+	content: "\e611";
+}
+.moco-cross_o:before {
+	content: "\e612";
+}
+.moco-cross:before {
+	content: "\e613";
+}
+.moco-database:before {
+	content: "\e614";
+}
+.moco-envelope:before {
+	content: "\e615";
+}
+.moco-fb:before {
+	content: "\e616";
+}
+.moco-flag:before {
+	content: "\e617";
+}
+.moco-font:before {
+	content: "\e618";
+}
+.moco-g:before {
+	content: "\e619";
+}
+.moco-home:before {
+	content: "\e61a";
+}
+.moco-i_o:before {
+	content: "\e61b";
+}
+.moco-inbox:before {
+	content: "\e61c";
+}
+.moco-library:before {
+	content: "\e61d";
+}
+.moco-like:before {
+	/*content: "\e61e";*/
+	content: "\e65f";
+}
+.moco-love_o:before {
+	content: "\e61f";
+}
+.moco-love_o2:before {
+	content: "\e620";
+}
+.moco-love:before {
+	content: "\e621";
+}
+.moco-moco:before {
+	/*content: "\e622";*/
+	content: "\e654";
+}
+.moco-note:before {
+	content: "\e623";
+}
+.moco-notes:before {
+	content: "\e624";
+}
+.moco-o:before {
+	content: "\e625";
+}
+.moco-out:before {
+	content: "\e626";
+}
+.moco-pen_o:before {
+	content: "\e627";
+}
+.moco-plus_o:before {
+	content: "\e628";
+}
+.moco-pustaka:before {
+	content: "\e629";
+}
+.moco-search:before {
+	content: "\e62a";
+}
+.moco-Shape:before {
+	content: "\e62b";
+}
+.moco-share_1:before {
+	content: "\e62c";
+}
+.moco-share:before {
+	content: "\e62d";
+}
+.moco-star:before {
+	content: "\e62e";
+}
+.moco-sun:before {
+	content: "\e62f";
+}
+.moco-time:before {
+	content: "\e630";
+}
+.moco-trash:before {
+	content: "\e631";
+}
+.moco-twitter:before {
+	content: "\e632";
+}
+
+
+@font-face {
+    font-family: 'donasi';
+    src:    url('../fonts/plugin/donasi.eot?cjknvs');
+    src:    url('../fonts/plugin/donasi.eot?cjknvs#iefix') format('embedded-opentype'),
+        url('../fonts/plugin/donasi.ttf?cjknvs') format('truetype'),
+        url('../fonts/plugin/donasi.woff?cjknvs') format('woff'),
+        url('../fonts/plugin/donasi.svg?cjknvs#donasi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="don-"], [class*=" don-"] {
+    font-family: 'donasi' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.don-triangle_down:before {
+    content: "\e900";
+}
+.don-check_o:before {
+    content: "\e901";
+}
+.don-donasi:before {
+    content: "\e902";
+}
+.don-books:before {
+    content: "\e903";
+}
+.don-act_donasi:before {
+    content: "\e904";
+}

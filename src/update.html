@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MOCO Commercial</title>
+		<script>
+			var fs = ign.filesystem();
+
+		    //desktopService()
+		    var sys = ign.sys();
+		    home = localStorage.getItem('home_');
+		    www = localStorage.getItem('url_');
+		    //sys.exec('rm -rf css'));
+//			 alert(home);
+//			 alert(www);
+
+		    setTimeout(function(){
+		    	if(localStorage.getItem('updated')=='false'){
+		    		console.log('update')
+		    		if (navigator.appVersion.indexOf("Win")!=-1){
+		    			//console.log(sys.exec('unzip.exe -o '+'"'+home+'"'+' -d '+'"'+www+'"'));
+		    			fs.unzip(home.replace(/ /g,'\ '),'',www.replace(/ /g,'\ '))
+		    		}else{
+		    			console.log(sys.exec('unzip -o '+'"'+home+'"'+' -d '+'"'+www+'"'));
+		    			//fs.unzip(home,'',www)
+		    		}
+		    	}else{
+		    		document.getElementById("ket").innerHTML = "Restarting Application ... ";
+		    		//$('#ket').html('Restarting Application ... ');
+		    	}
+		    	
+		    	localStorage.setItem('updated','true')
+			    //fs.unzip(home,'',www);
+				setTimeout(function(){
+					ign.back()
+				},3000)
+		    },500)
+		</script>
+	</head>
+	<body>
+		<center><div style="font-size:30px;position:fixed;margin:40% auto;width:100%">
+		<div id="ket">Extract File ... </div>
+		</div></center>
+	</body>
+</html>

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=iNgawi
+Icon=iNgawi
+Exec=/opt/iNgawi/iNgawi
+Comment=iNgawi
+Categories=GNOME;GTK;Development;Documentation;
+Terminal=false

@@ -1,0 +1,55 @@
+@charset "utf-8";
+ body {
+    /*overflow: hidden;*/
+    margin: auto;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*background-color: #363942;*/
+    z-index: 9999; /* makes sure it stays on top */
+    background-color: #62AFE0;
+    /*background: -webkit-linear-gradient(#BBA6B7, #7E55A3);
+    background: -o-linear-gradient(#BBA6B7, #7E55A3);
+    background: -moz-linear-gradient(#BBA6B7, #7E55A3);
+    background: linear-gradient(#BBA6B7, #7E55A3);*/
+}
+
+.se-pre-con {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: url(assets/img/placeholder/ic_buku_placeholder.png) center no-repeat #fff;
+}
+
+.pre {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6); /* preloader background color */
+    z-index: 6; /* makes sure it stays on top */
+}
+
+#status {
+    color: #fff;
+    font-size: 4em;
+    text-align: center;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
